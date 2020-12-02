@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 寻找100以内的质数
+
+        // 穷举法
+        outer: for (var i = 2; i <= 100; i++) {
+            // 内层循环开始从2开始到小于这个数字的每一个数字都尝试除i，如果能够整除，说明它不是质数，就可以筛选下一个数字了
+            for (var j = 2; j < i; j++) {
+                if (i % j == 0) {
+                    // 说明数字i不是质数，因为它找到了除1和它自身之外的约数了，测试下一个数字了
+                    // continue表示放弃这个数字，开始迭代下个数字，continue它负责的是它所在的最内层的for循环
+                    // 要给外层for循环加上label，然后在continue的后面加上这个label，
+                    // 这样就表示立即开始迭代外层for循环的下一个数字了,而不是内层for循环
+                    continue outer;
+                }
+            }
+
+            // 能够遇见这条语句的数字i，一定是质数，否则就被continue略过了
+            console.log(i);
+        }
+    </script>
+</body>
+
+</html>

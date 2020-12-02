@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a = 1;
+        var b = 2;
+        function fun() {
+            // 字母c没有加var关键字定义，所以它就变为了全局变量
+            c = 3;
+            c++;
+            var b = 4;
+            b++;
+            console.log(b);     // 5
+        }
+
+        fun();
+
+        console.log(b);         // 2
+        // 在函数外部，是可以访问变量c的
+        console.log(c);         // 4
+        
+    </script>
+</body>
+</html>

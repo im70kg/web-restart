@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a::before {
+            content: "■";
+        }
+
+        a::after {
+            content: "❤";
+        }
+
+        .box1 {
+            width: 400px;
+            height: 300px;
+            border: 1px solid #000;
+        }
+
+        .box1::selection {
+            /* 背景颜色 */
+            background-color: springgreen;
+            color: deeppink;
+        }
+
+        .box1::first-letter {
+            font-size: 50px;
+        }
+
+        .box1::first-line {
+            /* 添加下划线 */
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        <a href="">我是超级链接</a>
+    </p>
+    <p>
+        <a href="">我是超级链接</a>
+    </p>
+    <p>
+        <a href="">我是超级链接</a>
+    </p>
+
+    <div class="box1">
+        文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字
+    </div>
+</body>
+
+</html>

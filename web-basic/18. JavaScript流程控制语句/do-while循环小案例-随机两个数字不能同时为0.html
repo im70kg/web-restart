@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 随机两个变量，dx和dy，他们都在[-4, 4]之间随机取值，但是不能都为0
+        do {
+            var dx = parseInt(Math.random() * 9) - 4;
+            var dy = parseInt(Math.random() * 9) - 4;
+        } while (dx == 0 && dy == 0)
+
+        // 只要你出循环，就保证dx和dy不都是0
+        console.log(dx, dy);
+    </script>
+</body>
+
+</html>

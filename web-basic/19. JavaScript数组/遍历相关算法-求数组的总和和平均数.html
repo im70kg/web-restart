@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 求数组的总和和平均数
+        var arr = [3, 5, 3, 2, 1, 1];
+        // 累加器
+        var sum = 0;
+        // 遍历数组，每遍历一个数字，就要把这个数字累加到累加器中
+        for (var i = 0; i < arr.length; i++) {
+            sum += arr[i];
+        }
+
+        console.log(sum);
+        console.log(sum / arr.length);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>super</title>
+  </head>
+  <body>
+    <script>
+      // 1.作为函数调用
+      // 代表父类的构造方法，只能用在子类的构造方法中，用在其他地方就会报错
+      // super 虽然代表了父类的构造方法，但是内部的 this 指向子类的实例
+      // class Person {
+      //   constructor(name) {
+      //     this.name = name;
+
+      //     console.log(this);
+      //   }
+      // }
+      // class Programmer extends Person {
+      //   constructor(name, sex) {
+      //     super(name, sex);
+      //   }
+
+      //   // hi() {
+      //   //   super(); // ×
+      //   // }
+      // }
+      // // new Person();
+      // new Programmer();
+
+      // 2.作为对象使用
+      // 2.1.在构造方法中使用或一般方法中使用
+      // super 代表父类的原型对象 Person.prototype
+      // 所以定义在父类实例上的方法或属性，是无法通过 super 调用的
+      // 通过 super 调用父类的方法时，方法内部的 this 指向当前的子类实例
+      // class Person {
+      //   constructor(name) {
+      //     this.name = name;
+
+      //     console.log(this);
+      //   }
+
+      //   speak() {
+      //     console.log('speak');
+      //     // console.log(this);
+      //   }
+
+      //   static speak() {
+      //     console.log('Person speak');
+      //     console.log(this);
+      //   }
+      // }
+      // class Programmer extends Person {
+      //   constructor(name, sex) {
+      //     super(name, sex);
+
+      //     // console.log(super.name);
+      //     // super.speak();
+      //   }
+
+      //   // hi() {
+      //   //   super(); // ×
+      //   // }
+
+      //   speak() {
+      //     super.speak();
+      //     console.log('Programmer speak');
+      //   }
+
+      //   // 2.2.在静态方法中使用
+      //   // 指向父类，而不是父类的原型对象
+      //   // 通过 super 调用父类的方法时，方法内部的 this 指向当前的子类，而不是子类的实例
+      //   static speak() {
+      //     super.speak();
+      //     console.log('Programmer speak');
+      //   }
+      // }
+      // // new Person();
+      // // new Programmer();
+      // Programmer.speak();
+
+      // 3.注意事项
+      // 使用 super 的时候，必须显式指定是作为函数还是作为对象使用，否则会报错
+      class Person {
+        constructor(name) {
+          this.name = name;
+        }
+
+        speak() {
+          console.log('speak');
+        }
+      }
+      class Programmer extends Person {
+        constructor(name, sex) {
+          super(name, sex);
+
+          // console.log(super);
+          // console.log(super());
+          // console.log(super.speak);
+        }
+      }
+    </script>
+  </body>
+</html>

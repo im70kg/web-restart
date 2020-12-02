@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 让用户输入年份
+        var year = Number(prompt('请输入一个年份'));
+        // 让用户输入一个月份
+        var month = Number(prompt('请输入一个月份'));
+
+        // 根据月份来分类讨论
+        switch (month) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                alert('这个月有31天');
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                alert('这个月有30天');
+                break;
+            case 2:
+                // 根据用户输入的year计算一下当年是不是闰年
+                if (year % 4 == 0 && year % 100 != 0 || year % 100 == 0 && year % 400 == 0) {
+                    // 满足闰年的条件
+                    alert('这个月有29天');
+                } else {
+                    alert('这个月有28天');
+                }
+                break;
+            default:
+                alert('你输入的月份有误');
+        }
+    </script>
+</body>
+
+</html>

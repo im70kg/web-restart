@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>includes()</title>
+  </head>
+  <body>
+    <script>
+      // 1.基本用法
+      // 判断数组中是否含有某个成员
+      // console.log([1, 2, 3].includes('2')); // false
+      // console.log([1, 2, 3].includes(2));
+      // 第二个参数表示搜索的起始位置，默认值是 0
+      // console.log([1, 2, 3].includes(2, 2));
+      // 基本遵循严格相等（===）,但是对于 NaN 的判断与 === 不同，includes 认为 NaN === NaN
+      // console.log(NaN === NaN); 
+      // console.log([1, 2, NaN].includes(NaN));
+
+      // 2.应用
+      // 去重
+      // [1, 2, 1];
+
+      const arr = [];
+      for (const item of [1, 2, 1]) {
+        if (!arr.includes(item)) {
+          arr.push(item);
+        }
+      }
+      console.log(arr);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var obj1 = {
+            a: 1,
+            b: 2,
+            c: [33, 44, {
+                m: 55,
+                n: 66,
+                p: [77, 88]
+            }]
+        };
+
+        // 深克隆
+        function deepClone(o) {
+            // 要判断o是对象还是数组
+            if (Array.isArray(o)) {
+                // 数组
+                var result = [];
+                for (var i = 0; i < o.length; i++) {
+                    result.push(deepClone(o[i]));
+                }
+            } else if (typeof o == 'object') {
+                // 对象
+                var result = {};
+                for (var k in o) {
+                    result[k] = deepClone(o[k]);
+                }
+            } else {
+                // 基本类型值
+                var result = o;
+            }
+            return result;
+        }
+
+        
+        var obj2 = deepClone(obj1);
+        console.log(obj2);
+        
+        console.log(obj1.c == obj2.c);      // false
+        
+        obj1.c.push(99);
+        console.log(obj2);                  // obj2不变的，因为没有“藕断丝连”的现象
+
+        obj1.c[2].p.push(999);
+        console.log(obj2);                  // obj2不变的，因为没有“藕断丝连”的现象
+        
+    </script>
+</body>
+
+</html>

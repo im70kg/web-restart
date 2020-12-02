@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>方括号语法</title>
+  </head>
+  <body>
+    <script>
+      // 1.方括号语法的用法
+      // const prop = 'age';
+      // const person = {};
+
+      // // person.prop = 18;
+      // person[prop] = 18;
+
+      // 方括号语法可以写在对象字面量中
+      // const person = {
+      //   [prop]: 18
+      // };
+
+      // console.log(person);
+
+      // 2.方括号中可以放什么
+      // ${}
+      // [值或通过计算可以得到值的（表达式）]
+      // const prop = 'age';
+      // const func = () => 'age2';
+      // const person = {
+      //   // [prop]: 18
+      //   // [func()]: 18
+      //   // ['sex']: 'male'
+      //   ['s' + 'ex']: 'male'
+      // };
+      // console.log(person);
+
+      // 3.方括号语法和点语法的区别
+      // 点语法是方括号语法的特殊形式
+      const person = {};
+      // person.age 等价于 person['age']
+
+      // 属性名由数字、字母、下划线以及 $ 构成，并且数字还不能打头的时候可以使用点语法
+      // age18_$ √
+      // 18age ×
+      // 合法标识符可以用来作为变量或常量名
+
+      // 当你的属性或方法名是合法标识符时，可以使用点语法，其他情况下请使用方括号语法
+    </script>
+  </body>
+</html>

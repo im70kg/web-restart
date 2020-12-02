@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function People(name, age, sex) {
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+        }
+        // 往原型上添加nationality属性
+        People.prototype.nationality = '中国';
+
+        // 实例化
+        var xiaoming = new People('小明', 12, '男');
+        var tom = new People('汤姆', 10, '男');
+        tom.nationality = '美国';
+        
+        console.log(xiaoming.nationality);      // 中国
+        console.log(xiaoming);
+
+        console.log(tom.nationality);           // 美国
+
+        'nationality' in xiaoming       // true
+    </script>
+</body>
+</html>

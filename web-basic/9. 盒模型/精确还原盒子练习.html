@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 350px;
+            height: 183px;
+            border: 1px solid #CBD2D7;
+            /* 离网页边远一点 */
+            margin: 100px;
+        }
+
+        .box h2 {
+            padding-left: 10px;
+            height: 36px;
+            border-bottom: 2px solid #065D99;
+            font: bold 19px/36px '微软雅黑';
+            color: #065D99;
+        }
+
+        .box ul {
+            padding: 10px;
+            padding-bottom: 0;
+            list-style: none;
+        }
+
+        .box ul li {
+            height: 33px;
+            border-bottom: 1px solid #CBD2D7;
+            line-height: 33px;
+        }
+
+        .box ul li:last-child {
+            /* 去掉最后一个li的下边框线 */
+            border-bottom: none;
+        }
+
+        .box ul li a {
+            font: 16px/33px '微软雅黑';
+            text-decoration: none;
+            color: #3B3D3F;
+        }
+
+        .box ul li a:hover {
+            color: orange;
+            text-decoration: underline;
+        }
+
+        .box ul li span {
+            font: 12px/33px '微软雅黑';
+            color: #3B3D3F;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <h2>入学通知</h2>
+        <ul>
+            <li>
+                <a href="">北航2026年新生入学通知</a>
+                <span>[2026年9月1日]</span>
+            </li>
+            <li>
+                <a href="">新生军训通知</a>
+                <span>[2026年9月1日]</span>
+            </li>
+            <li>
+                <a href="">教材领取通知</a>
+                <span>[2026年9月1日]</span>
+            </li>
+            <li>
+                <a href="">校园地图最新版</a>
+                <span>[2026年9月1日]</span>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

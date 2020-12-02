@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Set 的注意事项</title>
+  </head>
+  <body>
+    <script>
+      // 1.判断重复的方式
+      // const s = new Set([1, 2, 1]);
+      // const s = new Set([NaN, 2, NaN]);
+
+      // console.log(1 === 1);
+      // console.log(NaN === NaN);
+
+      // Set 对重复值的判断基本遵循严格相等（===）
+      // 但是对于 NaN 的判断与 === 不同，Set 中 NaN 等于 NaN
+      // console.log(s);
+
+      // const s = new Set();
+      // s.add({}).add({});
+      // console.log({} === {});
+      // console.log(s);
+
+      // 2.什么时候使用 Set
+      // ① 数组或字符串去重时
+      // ② 不需要通过下标访问，只需要遍历时
+      // ③ 为了使用 Set 提供的方法和属性时（add delete clear has forEach size 等）
+    </script>
+  </body>
+</html>

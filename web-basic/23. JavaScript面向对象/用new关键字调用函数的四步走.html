@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function fun() {
+            this.a = 3;
+            this.b = 6;
+            var m = 34;
+            if (this.a > this.b) {
+                this.c = m;
+            } else {
+                this.c = m + 2;
+            }
+        }
+
+        var obj = new fun();
+        console.log(obj);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 定义正则表达式
+
+        // 这个正则表达式表示一个形式：以m开头，n结尾，中间是6位数字
+        var regexp = /^m\d{6}n$/;
+
+        var str1 = 'm123456n';
+        var str2 = 'm1234567n';
+        var str3 = 'm123b56n';
+        var str4 = '123456';
+
+        console.log(regexp.test(str1));     // true
+        console.log(regexp.test(str2));     // false
+        console.log(regexp.test(str3));     // false
+        console.log(regexp.test(str4));     // false
+    </script>
+</body>
+
+</html>

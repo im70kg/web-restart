@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 900px;
+            height: 600px;
+            border: 1px solid #000;
+            margin-bottom: 10px;
+            background: yellow url(images/archer.png);
+        }
+
+        .box1 {
+            /* 默认 */
+            background-repeat: repeat;
+        }
+
+        .box2 {
+            /* 默认 */
+            background-repeat: repeat-x;
+        }
+
+        .box3 {
+            /* 默认 */
+            background-repeat: repeat-y;
+        }
+
+        .box4 {
+            /* 默认 */
+            background-repeat: no-repeat;
+        }
+
+        body {
+            background-image: url(images/bg1.png);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <div class="box4"></div>
+</body>
+
+</html>

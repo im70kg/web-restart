@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str = 'abc123def4567ghi89';
+     
+        // search()方法，很像indexOf()，返回查找到的第一个下标，如果找不到就是-1
+        var result1 = str.search(/\d+/g);
+        var result2 = str.search(/m/g);
+        console.log(result1);       // 3
+        console.log(result2);       // -1
+
+        // match()方法，返回查找到的数组，找不到就是null
+        var result3 = str.match(/\d+/g);
+        console.log(result3);       // ["123", "4567", "89"]
+
+        // replace()方法，进行替换
+        var result4 = str.replace(/[a-z]+/g, '*');      // 注意+表示贪婪的，尽可能多的连续匹配小写字母
+        console.log(result4);       // *123*4567*89
+
+        // split()方法，进行字符串拆为数组
+        var result5 = str.split(/\d+/g);
+        console.log(result5);       // ["abc", "def", "ghi", ""]
+    </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Promise 是什么</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+
+      #box {
+        width: 300px;
+        height: 300px;
+        background-color: red;
+        transition: all 0.5s;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="box"></div>
+
+    <script>
+      // 1.认识 Promise
+      // Promise 是异步操作的一种解决方案
+      // 回调函数
+      // document.addEventListener(
+      //   'click',
+      //   () => {
+      //     console.log('这里是异步的');
+      //   },
+      //   false
+      // );
+      // console.log('这里是同步的');
+
+      // 2.什么时候使用 Promise
+      // Promise 一般用来解决层层嵌套的回调函数（回调地狱 callback hell）的问题
+      // 运动
+      const move = (el, { x = 0, y = 0 } = {}, end = () => {}) => {
+        el.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+
+        el.addEventListener(
+          'transitionend',
+          () => {
+            // console.log('end');
+            end();
+          },
+          false
+        );
+      };
+      const boxEl = document.getElementById('box');
+
+      document.addEventListener(
+        'click',
+        () => {
+          move(boxEl, { x: 150 }, () => {
+            move(boxEl, { x: 150, y: 150 }, () => {
+              move(boxEl, { y: 150 }, () => {
+                // console.log('object');
+                move(boxEl, { x: 0, y: 0 });
+              });
+            });
+          });
+        },
+        false
+      );
+    </script>
+  </body>
+</html>

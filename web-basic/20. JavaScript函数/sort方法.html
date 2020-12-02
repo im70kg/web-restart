@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = [33, 22, 11, 55];
+
+        // 排序，函数是JS中的一等公民，它可以当做参数传入另一个函数
+        arr.sort(function (a, b) {
+            return b - a;
+        });
+
+        console.log(arr);
+        
+    </script>
+</body>
+
+</html>

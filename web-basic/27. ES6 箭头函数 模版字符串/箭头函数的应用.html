@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>箭头函数的应用</title>
+    <style>
+      body {
+        padding: 50px 0 0 250px;
+        font-size: 30px;
+      }
+
+      #btn {
+        width: 100px;
+        height: 100px;
+        margin-right: 20px;
+        font-size: 30px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="btn">开始</button>
+    <span id="result">0</span>
+
+    <script>
+      const btn = document.getElementById('btn');
+      const result = document.getElementById('result');
+
+      // const timer = {
+      //   time: 0,
+      //   start: function () {
+      //     // this
+      //     var that = this;
+      //     // var self = this;
+      //     btn.addEventListener(
+      //       'click',
+      //       function () {
+      //         setInterval(function () {
+      //           console.log(this);
+      //           // this.time++;
+      //           // result.innerHTML = this.time;
+      //           that.time++;
+      //           result.innerHTML = that.time;
+      //         }, 1000);
+      //       },
+      //       false
+      //     );
+      //   }
+      // };
+
+      const timer = {
+        time: 0,
+        start: function () {
+          // this
+          btn.addEventListener(
+            'click',
+            () => {
+              // this
+              setInterval(() => {
+                console.log(this);
+                this.time++;
+                result.innerHTML = this.time;
+              }, 1000);
+            },
+            false
+          );
+        }
+      };
+
+      timer.start();
+    </script>
+  </body>
+</html>

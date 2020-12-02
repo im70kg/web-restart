@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>其它数据类型的解构赋值</title>
+  </head>
+  <body>
+    <script>
+      // 1.字符串的解构赋值
+      // ''='hello' ×
+      // 数组形式的解构赋值
+      // const [a, b, , , c] = 'hello';
+      // console.log(a, b, c);
+
+      // 对象形式的解构赋值
+      // const { 0: a, 1: b, length } = 'hello';
+      // console.log(a, b, length);
+      // console.log('hello'.length);
+
+      // 字符串既可以按数组形式来解构赋值，也可以按对象形式来解构赋值
+
+      // 2.数值和布尔值的解构赋值
+      // 先将等号右边的值转为对象
+      // console.log(new Number(123));
+      // const { a = 1, toString } = 123;
+      // console.log(a, toString);
+
+      // const { b = 2, toString } = true;
+      // console.log(b, toString);
+
+      // 3.undefined 和 null 的解构赋值
+      // 由于 undefined 和 null 无法转为对象，所以对它们进行解构赋值，都会报错
+      // const { toString } = undefined;
+      const { toString } = null;
+    </script>
+  </body>
+</html>

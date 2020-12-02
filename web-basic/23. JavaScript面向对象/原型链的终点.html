@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function People(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+        var xiaoming = new People('小明', 12);
+
+        console.log(xiaoming.__proto__.__proto__ === Object.prototype);     // true
+        console.log(Object.prototype.__proto__);                            // null
+
+        console.log(Object.prototype.hasOwnProperty('hasOwnProperty'));     // true
+        console.log(Object.prototype.hasOwnProperty('toString'));           // true
+    </script>
+</body>
+</html>

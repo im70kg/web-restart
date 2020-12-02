@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function People(name, age, sex) {
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+        }
+        // 把方法要写到原型上
+        People.prototype.sayHello = function () {
+            console.log('你好，我是' + this.name + '我今年' + this.age + '岁了');
+        }
+        People.prototype.growup = function () {
+            this.age ++;
+        }
+
+        var xiaoming = new People('小明', 12, '男');
+        var xiaohong = new People('小红', 11, '女');
+
+        console.log(xiaoming.sayHello === xiaohong.sayHello);
+
+        xiaoming.sayHello();
+        xiaohong.sayHello();
+
+        xiaoming.growup();
+        xiaoming.growup();
+        xiaoming.growup();
+        xiaoming.growup();
+        xiaoming.growup();
+
+        xiaoming.sayHello();
+        xiaohong.sayHello();
+    </script>
+</body>
+</html>

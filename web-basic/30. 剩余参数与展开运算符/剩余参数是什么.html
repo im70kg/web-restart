@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>剩余参数是什么</title>
+  </head>
+  <body>
+    <script>
+      // 1.认识剩余参数
+      // const add = (x, y, z, ...args) => {};
+
+      // 2.剩余参数的本质
+      const add = (x, y, ...args) => {
+        console.log(x, y, args);
+      };
+      // add();
+      // add(1);
+      // add(1, 2);
+      add(1, 2, 3, 4, 5);
+
+      // 剩余参数永远是个数组，即使没有值，也是空数组
+
+      // 3, 4, 5->[3, 4, 5]
+    </script>
+  </body>
+</html>

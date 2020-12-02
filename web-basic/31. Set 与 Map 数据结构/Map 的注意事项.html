@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Map 的注意事项</title>
+  </head>
+  <body>
+    <script>
+      // 1.判断键名是否相同的方式
+      // 基本遵循严格相等（===）
+      // 例外就是 NaN，Map 中 NaN 也是等于 NaN
+      // console.log(NaN === NaN);
+      // const m = new Map();
+      // m.set(NaN, 1).set(NaN, 2);
+      // console.log(m);
+
+      // 2.什么时候使用 Map
+      // 如果只是需要 key -> value 的结构，或者需要字符串以外的值做键，使用 Map 更合适
+      // forEach for in
+      // size
+
+      // 只有模拟现实世界的实体时，才使用对象
+      const person = {};
+    </script>
+  </body>
+</html>

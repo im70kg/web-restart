@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 日期对象
+        var d = new Date();
+
+        // 显示时间戳的两种方法。时间戳表示1970年1月1日距离此时的毫秒数
+        var timestamp1 = d.getTime();       // 精确到毫秒
+        var timestamp2 = Date.parse(d);     // 精确到秒，也是毫秒数，只不过最后三位一定是000
+
+        console.log(timestamp1);
+        console.log(timestamp2);
+
+        // 如何把时间戳，比如1601536565000变回日期对象呢？
+        var dd = new Date(1601536565000);
+        console.log(dd);
+        console.log(dd.getFullYear());
+    </script>
+</body>
+</html>

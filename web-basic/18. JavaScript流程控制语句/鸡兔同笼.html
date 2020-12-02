@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 鸡兔同笼的问题
+
+        // 方法1：
+        // // 假设小鸡有a只，兔子有b只
+        // for (var a = 0; a <= 35; a++) {
+        //     for (var b = 0; b <= 35; b++) {
+        //         if (a + b == 35 && 2 * a + 4 * b == 94) {
+        //             console.log('小鸡有' + a + '只，兔子有' + b + '只');
+        //         }
+        //     }
+        // }
+
+        // 方法2：
+        // 假设小鸡有a只，那么兔子有35 - a只
+        for (var a = 0; a < 35; a++) {
+            var b = 35 - a;
+            if (2 * a + 4 * b == 94) {
+                console.log('小鸡有' + a + '只，兔子有' + b + '只');
+            }
+        }
+    </script>
+</body>
+
+</html>

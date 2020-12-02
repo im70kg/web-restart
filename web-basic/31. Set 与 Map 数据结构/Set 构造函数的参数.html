@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Set 构造函数的参数</title>
+  </head>
+  <body>
+    <p>1</p>
+    <p>2</p>
+    <p>3</p>
+    <script>
+      // 1.数组
+      // const s = new Set([1, 2, 1]);
+      // console.log(s);
+
+      // 2.字符串、arguments、NodeList、Set 等
+      // console.log(new Set('hi'));
+      // function func() {
+      //   console.log(new Set(arguments));
+      // }
+      // func(1, 2, 1);
+      // console.log(new Set(document.querySelectorAll('p')));
+
+      const s = new Set([1, 2, 1]);
+      console.log(new Set(s) === s);
+      console.log(s);
+    </script>
+  </body>
+</html>

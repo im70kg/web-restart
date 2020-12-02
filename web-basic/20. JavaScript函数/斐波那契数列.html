@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 编写一个函数，这个函数的功能是返回斐波那契数列中下标为n的那项的值
+        function fib(n) {
+            // 数列的下标为0的项，和下标为1的项值是1
+            if (n == 0 || n == 1) return 1;
+            // 斐波那契数列的本质特征就是每一项，都等于前面两项的和
+            return fib(n - 1) + fib(n - 2);
+        }
+
+        // 书写一个循环语句，计算斐波那契数列的前15项
+        for (var i = 0; i < 15; i++) {
+            console.log(fib(i));
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>箭头函数的注意事项</title>
+  </head>
+  <body>
+    <script>
+      // 1.单个参数
+      // 单个参数可以省略圆括号
+      // const add = x => {
+      //   return x + 1;
+      // };
+      // console.log(add(1));
+
+      // 无参数或多个参数不能省略圆括号
+      // const add = () => {
+      //   return 1 + 1;
+      // };
+      // const add = (x, y) => {
+      //   return x + y;
+      // };
+      // console.log(add(1, 1));
+
+      // 2.单行函数体
+      // 单行函数体可以同时省略 {} 和 return
+      // const add = (x, y) => {
+      //   return x + y;
+      // };
+      // const add = (x, y) => x + y;
+      // console.log(add(1, 1));
+
+      // 多行函数体不能再化简了
+      // const add = (x, y) => {
+      //   const sum = x + y;
+      //   return sum;
+      // };
+
+      // 3.单行对象
+      // const add = (x, y) => {
+      //   return {
+      //     value: x + y
+      //   };
+      // };
+      // const add = (x, y) => ({
+      //   value: x + y
+      // });
+
+      // 如果箭头函数返回单行对象，可以在 {} 外面加上 ()，让浏览器不再认为那是函数体的花括号
+
+      // const add = (x, y) => [x, y];
+
+      // console.log(add(1, 1));
+    </script>
+  </body>
+</html>

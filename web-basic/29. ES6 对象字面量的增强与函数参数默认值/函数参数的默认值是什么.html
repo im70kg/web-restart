@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>函数参数的默认值是什么</title>
+  </head>
+  <body>
+    <script>
+      // 1.认识函数参数的默认值
+      // 调用函数的时候传参了，就用传递的参数；如果没传参，就用默认值
+      // multiply(2, 1);
+      // multiply(2);
+
+      // 2.函数参数默认值的基本用法
+      // const multiply = (x, y) => {
+      //   if (typeof y === 'undefined') {
+      //     y = 1;
+      //   }
+
+      //   return x * y;
+      // };
+
+      const multiply = (x, y = 1) => x * y;
+      console.log(multiply(2));
+    </script>
+  </body>
+</html>

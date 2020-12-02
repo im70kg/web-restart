@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>数组解构赋值的应用</title>
+  </head>
+  <body>
+    <p>123</p>
+    <p>321</p>
+    <p>34567</p>
+    <script>
+      // 1.常见的类数组的解构赋值
+      // arguments
+      // function func() {
+      //   // console.log(arguments);
+      //   // console.log(arguments.push);
+      //   const [a, b] = arguments;
+      //   console.log(a, b);
+      // }
+      // // func();
+      // func(1, 2);
+
+      // NodeList
+      // console.log(document.querySelectorAll('p'));
+      // const [p1, p2, p3] = document.querySelectorAll('p');
+      // console.log(p1, p2, p3);
+
+      // 2.函数参数的解构赋值
+      // const array = [1, 1];
+      // // const add = arr => arr[0] + arr[1];
+      // const add = ([x = 0, y = 0]) => x + y;
+      // // console.log(add(array));
+      // console.log(add([]));
+
+      // [x,y]=[1,1]
+
+      // 3.交换变量的值
+      let x = 1;
+      let y = 2;
+
+      // let tmp = x;
+      // x = y;
+      // y = tmp;
+      // console.log(x, y);
+
+      // [x, y] = [y, x];
+      [x, y] = [2, 1];
+      console.log(x, y);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var str = 'abc123def456ghi789';
+        var regexp = /\d+/g;    // +表示贪婪的，尽可能多的匹配
+        var result1 = regexp.exec(str);
+        var result2 = regexp.exec(str);
+        var result3 = regexp.exec(str);
+        var result4 = regexp.exec(str);
+        console.log(result1);
+        console.log(result2);
+        console.log(result3);
+        console.log(result4);
+
+        // 使用循环语句来循环执行exec，寻找所有的匹配结果
+        var result;
+        while (result = regexp.exec(str)) {
+            console.log(result);
+        }
+    </script>
+</body>
+
+</html>

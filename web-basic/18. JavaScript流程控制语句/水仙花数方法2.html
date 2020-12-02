@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 要求用户输入一个三位数
+        var n = Number(prompt('请输入一个三位数'));
+
+        // 对用户输入的数值，进行合法性的验证
+        if (!isNaN(n) && 100 <= n && n <= 999) {
+            // 当用户输入的数字是合法
+            // 字符串方法
+            // 把数字n变为字符串
+            var n_str = n.toString();
+            console.log('n_str',n_str)
+            // 个位
+            var a = Number(n_str.charAt(2));
+            // 十位
+            var b = Number(n_str.charAt(1));
+            // 百位
+            var c = Number(n_str.charAt(0));
+            console.log(a,b,c)
+
+            // 根据水仙花数的条件进行判断
+            if (Math.pow(a, 3) + Math.pow(b, 3) + Math.pow(c, 3) == n) {
+                alert('这个数字是水仙花数');
+            } else {
+                alert('这个数字不是水仙花数');
+            }
+        } else {
+            // 输入不合法
+            alert('您输入的数字不合法的');
+        }
+    </script>
+</body>
+
+</html>

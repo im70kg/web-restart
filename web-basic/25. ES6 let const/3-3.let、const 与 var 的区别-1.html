@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>let、const 与 var 的区别</title>
+  </head>
+  <body>
+    <script>
+      // 1.重复声明
+      // 已经存在的变量或常量，又声明了一遍
+      // var 允许重复声明，let、const 不允许
+      // let a = 1;
+      // // ...
+      // let a = 2;
+      // console.log(a);
+
+      // function func(a) {
+      //   let a = 1;
+      // }
+      // func();
+
+      // 2.变量提升
+      // var 会提升变量的声明到当前作用域的顶部
+      // console.log(a);
+
+      // console.log(a);
+      // var a = 1;
+
+      // 相当于
+      // var a;
+      // console.log(a);
+      // a = 1;
+      // console.log(a);
+
+      // let、const 不存在变量提升
+      // console.log(a);
+      // let a = 1;
+
+      // 养成良好的编程习惯，对于所有的变量或常量，做到先声明，后使用
+
+      // 3.暂时性死区
+      // 只要作用域内存在 let、const，它们所声明的变量或常量就自动“绑定”这个区域，不再受到外部作用域的影响
+      // let、const 存在暂时性死区
+      // let a = 2;
+      // let b = 1;
+      // function func() {
+      //   console.log(b);
+      //   // console.log(a);
+      //   // let a = 1;
+      // }
+      // func();
+
+      // 养成良好的编程习惯，对于所有的变量或常量，做到先声明，后使用
+
+      // 4.window 对象的属性和方法
+      // 全局作用域中，var 声明的变量，通过 function 声明的函数，会自动变成 window 对象的属性或方法
+      // let、const 不会
+
+      // var/function
+      // var age = 18;
+      // function add() {}
+      // console.log(window.age);
+      // console.log(window.add === add);
+
+      // let/const
+      // let age = 18;
+      // const add = function () {};
+      // console.log(window.age);
+      // console.log(window.add === add);
+
+      // 5.块级作用域
+    </script>
+  </body>
+</html>

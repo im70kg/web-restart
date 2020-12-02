@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var lock = true;
+
+        function 需要节流的函数() {
+            // 如果锁是关闭状态，则不执行
+            if (!lock) return;
+            // 函数核心语句
+
+            // 关锁
+            lock = false;
+
+            // 指定毫秒数后将锁打开
+            setTimeout(function () {
+                lock = true;
+            }, 2000);
+        }
+    </script>
+</body>
+
+</html>

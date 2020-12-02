@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            margin: 40px auto;
+            perspective: 500px;
+            position: relative;
+        }
+
+        .box img {
+            width: 200px;
+            height: 200px;
+            border: 1px solid #000;
+            border-radius: 50%;
+        }
+
+        .box img.dog {
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform-origin: 0 0;
+            transition: transform 1s ease 0s;
+        }
+
+        .box:hover img.dog {
+            transform: rotateY(-180deg);
+        }
+
+        .no2 img.dog {
+            transform-origin: 100% 100%;
+        }
+
+        .no2:hover img.dog {
+            transform: rotateY(180deg);
+        }
+
+        .no3 img.dog {
+            transform-origin: 0 0;
+        }
+
+        .no3:hover img.dog {
+            transform: rotateX(180deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <img class="cat" src="images/cat.jpg" alt="">
+        <img class="dog" src="images/dog.jpg" alt="">
+    </div>
+
+    <div class="box no2">
+        <img class="cat" src="images/cat.jpg" alt="">
+        <img class="dog" src="images/dog.jpg" alt="">
+    </div>
+
+    <div class="box no3">
+        <img class="cat" src="images/cat.jpg" alt="">
+        <img class="dog" src="images/dog.jpg" alt="">
+    </div>
+</body>
+
+</html>

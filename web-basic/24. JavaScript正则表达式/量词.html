@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 题目1：请验证字符串是否符合手机号码的规则：11位数字，并且肯定以1开头
+        var str1 = '13812345678';
+        var str2 = '138123456789';
+        var str3 = '38123456789';
+        var regexp1 = /^1\d{10}$/;
+        console.log(regexp1.test(str1));
+        console.log(regexp1.test(str2));
+        console.log(regexp1.test(str3));
+        
+        // 题目2：请验证某字符串是否是这样的：以字母开头，中间是任意位数字（最少1位）构成，并以字母结尾
+        var str4 = 'a123123123b';
+        var str5 = 'abcd';
+        var str6 = 'a1b';
+        var regexp2 = /^[a-zA-Z]\d+[a-zA-Z]$/;
+        console.log(regexp2.test(str4));
+        console.log(regexp2.test(str5));
+        console.log(regexp2.test(str6));
+        
+        // 题目3：请验证某字符串是否符合网址规则：以www.开头，中间是任意位的字符（字母数字下划线，最少一位），最后以.com结尾，也可以以.com.cn结尾
+        var str7 = 'www.imooc.com';
+        var str8 = 'www.sina.com.cn';
+        var str9 = 'www.news.cn';
+        var regexp3 = /^www\.\w+\.com(\.cn)?$/;
+        console.log(regexp3.test(str7));
+        console.log(regexp3.test(str8));
+        console.log(regexp3.test(str9));
+    </script>
+</body>
+</html>

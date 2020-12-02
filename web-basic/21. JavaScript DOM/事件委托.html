@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">按我创建一个新列表项</button>
+    <ul id="list">
+        <li>列表项</li>
+        <li>列表项</li>
+        <li>列表项</li>
+    </ul>
+    <script>
+        var oList = document.getElementById('list');
+        var oBtn = document.getElementById('btn');
+
+        oList.onclick = function (e) {
+            // e.target表示用户真正点击的那个元素
+            e.target.style.color = 'red';
+        };
+
+        oBtn.onclick = function () {
+            // 创建新的li元素
+            var oLi = document.createElement('li');
+            // 写内容
+            oLi.innerText = '我是新来的';
+            // 上树
+            oList.appendChild(oLi);
+        };
+    </script>
+</body>
+
+</html>

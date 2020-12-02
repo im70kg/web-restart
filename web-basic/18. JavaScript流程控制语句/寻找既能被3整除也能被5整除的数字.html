@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 寻找1~100当中的既能被3整除，也能被5整除的数字
+        // 穷举法，从1开始试验
+        for (var i = 1; i <= 100; i++) {
+            if (i % 3 == 0 && i % 5 == 0) {
+                console.log(i);
+            }
+        }
+        
+    </script>
+</body>
+</html>

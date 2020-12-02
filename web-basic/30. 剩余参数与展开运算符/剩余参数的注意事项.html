@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>剩余参数的注意事项</title>
+  </head>
+  <body>
+    <script>
+      // 1.箭头函数的剩余参数
+      // 箭头函数的参数部分即使只有一个剩余参数，也不能省略圆括号
+      // const add = (...args) => {};
+
+      // 2.使用剩余参数替代 arguments 获取实际参数
+      // const add = function () {
+      //   console.log(arguments);
+      // };
+      // const add = (...args) => {
+      //   console.log(args);
+      // };
+      // add(1, 2);
+
+      // 3.剩余参数的位置
+      // 剩余参数只能是最后一个参数，之后不能再有其他参数，否则会报错
+      const add = (x, y, ...args) => {
+        console.log(args);
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = [1, 1, 1, 2, 2, 3, 3, 3, 2, 1];
+
+        // 结果数组
+        var result = [];
+
+        // 遍历原数组
+        for (var i = 0; i < arr.length; i++) {
+            // 判断遍历到的这项是否在结果数组中，如果不在就推入
+            // includes方法用来判断某项是否在数组中
+            if (!result.includes(arr[i])) {
+                result.push(arr[i]);
+            }
+        }
+
+        console.log(result);
+
+    </script>
+</body>
+
+</html>

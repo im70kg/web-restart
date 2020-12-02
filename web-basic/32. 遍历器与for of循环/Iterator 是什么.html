@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Iterator 是什么</title>
+  </head>
+  <body>
+    <script>
+      // 1.Iterator 的作用
+      // Iterator：遍历器（迭代器）
+      // for()
+      // [1,2].forEach
+      // new Set().forEach
+
+      // Iterator 也是用来遍历的
+
+      // 2.寻找 Iterator
+      // console.log(Iterator);
+
+      // console.log([1, 2][Symbol.iterator]());
+
+      // const it = [1, 2][Symbol.iterator]();
+      // console.log(it);
+
+      // 3.使用 Iterator
+      // const it = [1, 2][Symbol.iterator]();
+      // console.log(it.next()); // {value: 1, done: false}
+      // console.log(it.next()); // {value: 2, done: false}
+      // console.log(it.next()); // {value: undefined, done: true}
+      // console.log(it.next()); // {value: undefined, done: true}
+
+      // it：可遍历对象（可迭代对象）
+      // Symbol.iterator：可遍历对象的生成方法
+
+      // 4.什么是 Iterator
+      // Symbol.iterator（可遍历对象的生成方法） -> it（可遍历对象） -> it.next() -> it.next() -> ...（直到 done 为 true）
+    </script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1 {
+            width: 300px;
+            height: 300px;
+            border: 10px dotted #000;
+            padding: 60px;
+            background-image: url(images/0.jpg);
+            margin-bottom: 10px;
+        }
+
+        .box2 {
+            width: 300px;
+            height: 300px;
+            border: 10px dotted #000;
+            padding: 60px;
+            background-image: url(images/0.jpg);
+            /* 背景裁切到padding区域，此时就不会在点状线、虚线边框底下渲染 */
+            background-clip: padding-box;
+            margin-bottom: 10px;
+        }
+
+        .box3 {
+            width: 300px;
+            height: 300px;
+            border: 10px dotted #000;
+            padding: 60px;
+            background-image: url(images/0.jpg);
+            /* 背景裁切到内容区域 */
+            background-clip: content-box;
+            background-size: 100px auto;
+            /* 背景起源 */
+            background-origin: content-box;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+</body>
+
+</html>

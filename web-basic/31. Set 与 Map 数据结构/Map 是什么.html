@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Map 是什么</title>
+  </head>
+  <body>
+    <script>
+      // 1.认识 Map
+      // 映射
+
+      // Map 和对象都是键值对的集合
+
+      // 键->值，key->value
+      // const person = {
+      //   name: 'alex',
+      //   age: 18
+      // };
+
+      // const m = new Map();
+      // m.set('name', 'alex');
+      // m.set('age', 18);
+      // console.log(m);
+
+      // 2.Map 和对象的区别
+      // 对象一般用字符串当作键
+      // const obj = {
+      //   name: 'alex',
+      //   true: 'true',
+      //   [{}]: 'object'
+      // };
+      // console.log(obj);
+      // console.log({}.toString());
+
+      // 基本数据类型：数字、字符串、布尔值、undefined、null
+      // 引用数据类型：对象（[]、{}、函数、Set、Map 等）
+      // 以上都可以作为 Map 的键
+      const m = new Map();
+      m.set('name', 'alex');
+      m.set(true, 'true');
+      m.set({}, 'object');
+      m.set(new Set([1, 2]), 'set');
+      m.set(undefined, 'undefined');
+      console.log(m);
+    </script>
+  </body>
+</html>

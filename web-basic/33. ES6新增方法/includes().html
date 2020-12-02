@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>includes()</title>
+  </head>
+  <body>
+    <script>
+      // 判断字符串中是否含有某些字符
+
+      // 1.基本用法
+      // console.log('abc'.includes('a'));
+      // console.log('abc'.includes('ab'));
+      // console.log('abc'.includes('bc'));
+      // console.log('abc'.includes('ac')); // false
+
+      // 2.第二个参数
+      // 表示开始搜索的位置，默认是 0
+      // console.log('abc'.includes('a'));
+      // console.log('abc'.includes('a', 0));
+      // console.log('abc'.includes('a', 1)); // false
+
+      // 3.应用
+      // https://www.imooc.com/course/list
+      // https://www.imooc.com/course/list?c=fe&sort=pop&name=value
+      let url = 'https://www.imooc.com/course/list?';
+      const addURLParam = (url, name, value) => {
+        url += url.includes('?') ? '&' : '?';
+
+        url += `${name}=${value}`;
+
+        return url;
+      };
+      url = addURLParam(url, 'c', 'fe');
+      console.log(url);
+      url = addURLParam(url, 'sort', 'pop');
+      console.log(url);
+    </script>
+  </body>
+</html>

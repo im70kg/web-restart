@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 创建正则表达式方法1
+        var regexp1 = /^\d{6}$/;
+        // 创建正则表达式方法2
+        var regexp2 = new RegExp('^\\d{6}$');
+
+        var str = '555666';
+
+        console.log(regexp1.test(str));     // true
+        console.log(regexp2.test(str));     // true
+
+        console.log(typeof regexp1);        // object
+        console.log(typeof regexp2);        // object
+    </script>
+</body>
+</html>

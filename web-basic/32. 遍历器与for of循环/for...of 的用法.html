@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>for...of 的用法</title>
+  </head>
+  <body>
+    <script>
+      // 1.认识 for...of
+      // const arr = [1, 2, 3];
+      // // const it = arr[Symbol.iterator]();
+      // // // console.log(it.next());
+      // // // console.log(it.next());
+      // // // console.log(it.next());
+      // // // console.log(it.next());
+      // // let next = it.next();
+      // // console.log(next);
+      // // while (!next.done) {
+      // //   console.log(next.value);
+      // //   next = it.next();
+      // //   console.log(next);
+      // // }
+      // for (const item of arr) {
+      //   console.log(item);
+      // }
+      // // for...of 循环只会遍历出那些 done 为 false 时，对应的 value 值
+
+      // 2.与 break、continue 一起使用
+      // const arr = [1, 2, 3];
+      // for (const item of arr) {
+      //   if (item === 2) {
+      //     // break;
+      //     continue;
+      //   }
+      //   console.log(item);
+      // }
+
+      // arr.forEach()
+
+      // 3.在 for...of 中取得数组的索引
+      const arr = [1, 2, 3];
+
+      // keys() 得到的是索引的可遍历对象，可以遍历出索引值
+      console.log(arr.keys());
+      // for (const key of arr.keys()) {
+      //   // console.log(key);
+      // }
+      // // values() 得到的是值的可遍历对象，可以遍历出值
+      // for (const value of arr.values()) {
+      //   console.log(value);
+      // }
+      // for (const value of arr) {
+      //   console.log(value);
+      // }
+
+      // entries() 得到的是索引+值组成的数组的可遍历对象
+      // for (const entries of arr.entries()) {
+      //   console.log(entries);
+      // }
+      for (const [index, value] of arr.entries()) {
+        console.log(index, value);
+      }
+    </script>
+  </body>
+</html>

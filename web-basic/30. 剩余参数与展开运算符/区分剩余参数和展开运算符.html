@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>区分剩余参数和展开运算符</title>
+  </head>
+  <body>
+    <script>
+      // 1.根本区别
+      // 展开运算符
+      // [3,1,2]->3,1,2
+
+      // 剩余参数
+      // 3,1,2->[3,1,2]
+
+      // 2.区分剩余参数和展开运算符
+
+      // 剩余参数
+      // const add = (...args) => {
+      //   // console.log(args);
+
+      //   // 展开运算符
+      //   // console.log(...args);
+      //   // console.log(...[1, 2, 3]);
+      //   console.log(1, 2, 3);
+      // };
+      // add(1, 2, 3);
+
+      console.log([...[1, 2, 3], 4]);
+      // [1, 2, 3]->1,2,3
+    </script>
+  </body>
+</html>

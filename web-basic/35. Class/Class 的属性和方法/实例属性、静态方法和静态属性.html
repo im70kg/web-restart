@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>实例属性、静态方法和静态属性</title>
+  </head>
+  <body>
+    <script>
+      // 1.实例属性
+      // 方法就是值为函数的特殊属性
+      // class Person {
+      //   age = 0;
+      //   sex = 'male';
+      //   getSex = function () {
+      //     return this.sex;
+      //   };
+
+      //   constructor(name, sex) {
+      //     this.name = name;
+      //     // this.age = 18;
+      //     this.sex = sex;
+      //   }
+
+      //   // speak() {
+      //   //   this.age = 18;
+      //   // }
+      // }
+
+      // const p = new Person('Alex');
+      // console.log(p.name);
+      // console.log(p.age);
+
+      // 2.静态方法
+      // 类的方法
+      // class Person {
+      //   constructor(name) {
+      //     this.name = name;
+      //   }
+
+      //   speak() {
+      //     console.log('speak');
+      //     console.log(this);
+      //   }
+
+      //   // static speak() {
+      //   //   console.log('人类可以说话');
+
+      //   //   // this 指向类
+      //   //   console.log(this);
+      //   // }
+      // }
+
+      // // Person.speak = function () {
+      // //   console.log('人类可以说话');
+      // //   console.log(this);
+      // // };
+
+      // const p = new Person('Alex');
+      // p.speak();
+
+      // Person.speak();
+
+      // 3.静态属性
+      // 类的属性
+      class Person {
+        constructor(name) {
+          this.name = name;
+        }
+
+        //  不要这么写，目前只是提案，有兼容性问题
+        // static version = '1.0';
+
+        static getVersion() {
+          return '1.0';
+        }
+      }
+      // Person.version = '1.0';
+
+      const p = new Person('Alex');
+      console.log(p.name);
+
+      // console.log(Person.version);
+      console.log(Person.getVersion());
+    </script>
+  </body>
+</html>

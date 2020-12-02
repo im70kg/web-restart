@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .clearfix::after {
+            content: '';
+            clear: both;
+            /* 转为块级元素 */
+            display: block;
+        }
+
+        div {
+            margin-bottom: 10px;
+        }
+
+        p {
+            float: left;
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            margin-right: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="clearfix">
+        <p></p>
+        <p></p>
+    </div>
+    <div class="clearfix">
+        <p></p>
+        <p></p>
+    </div>
+</body>
+
+</html>

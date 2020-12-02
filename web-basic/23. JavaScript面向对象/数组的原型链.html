@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = [344, 45, 34, 23];
+
+        console.log(arr.__proto__ === Array.prototype);                 // true
+        console.log(arr.__proto__.__proto__ === Object.prototype);      // true
+        console.log(Array.prototype.hasOwnProperty('push'));            // true
+        console.log(Array.prototype.hasOwnProperty('splice'));          // true
+    </script>
+</body>
+</html>

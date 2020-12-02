@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 1200px;
+            overflow: hidden;
+            margin: 40px auto;
+        }
+
+        .box ul {
+            list-style: none;
+        }
+
+        .box ul li {
+            float: left;
+            width: 380px;
+            height: 210px;
+            margin-right: 20px;
+            /* 子绝父相 */
+            position: relative;
+        }
+
+        .box ul li img {
+            width: 380px;
+            height: 210px;
+        }
+
+        .box ul li .info {
+            position: absolute;
+            width: 370px;
+            height: 30px;
+            line-height: 30px;
+            color: white;
+            bottom: 0;
+            padding-left: 10px;
+            background-color: rgba(0, 0, 0, .5);
+            /* 透明度设置为0，不是背景的透明度，而是整体的透明度 */
+            opacity: 0;
+            /* 过渡 */
+            transition: opacity 1s ease 0s;
+        }
+
+        /* 当li被触碰的时候，内部的info盒子就要把透明度变为1 */
+        .box ul li:hover .info {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <ul>
+            <li>
+                <img src="images/0.jpg" alt="">
+                <div class="info">北京的故宫</div>
+            </li>
+            <li>
+                <img src="images/1.jpg" alt="">
+                <div class="info">鸟巢国家体育场</div>
+            </li>
+            <li>
+                <img src="images/2.jpg" alt="">
+                <div class="info">十七孔桥</div>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>不适用箭头函数的场景</title>
+  </head>
+  <body>
+    <script>
+      // 1.作为构造函数
+      // 箭头函数没有 this
+      // const Person = () => {};
+      // new Person();
+
+      // 2.需要 this 指向调用对象的时候
+      // document.onclick = function () {
+      //   console.log(this);
+      // };
+      // document.addEventListener(
+      //   'click',
+      //   () => {
+      //     console.log(this); //window
+      //   },
+      //   false
+      // );
+
+      // 3.需要使用 arguments 的时候
+      // 箭头函数中没有 arguments
+      // function add() {
+      //   console.log(arguments);
+      // }
+      // add(1, 2,3,4,5);
+
+      // const add = () => console.log(arguments);
+      // add();
+      // 剩余参数
+    </script>
+  </body>
+</html>

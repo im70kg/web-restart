@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 由用户输入数字n，计算3/2 + 4/3 + 5/4 + …… + (n+1)/n的结果
+
+        // 用户输入数字n
+        var n = Number(prompt('请输入数字n'));
+
+        // 累加器
+        var sum = 0;
+
+        // 遍历分母就可以了，因为分母就是分子加1有关系
+        for (var i = 2; i <= n; i++) {
+            sum += (i + 1) / i;
+        }
+
+        alert(sum.toFixed(2));
+    </script>
+</body>
+
+</html>

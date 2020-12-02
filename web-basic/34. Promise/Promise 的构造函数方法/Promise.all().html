@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Promise.all()</title>
+  </head>
+  <body>
+    <script>
+      // 1.有什么用
+      // Promise.all() 关注多个 Promise 对象的状态变化
+      // 传入多个 Promise 实例，包装成一个新的 Promise 实例返回
+
+      // 2.基本用法
+      const delay = ms => {
+        return new Promise(resolve => {
+          setTimeout(resolve, ms);
+        });
+      };
+
+      const p1 = delay(1000).then(() => {
+        console.log('p1 完成了');
+
+        // return 'p1';
+        return Promise.reject('reason');
+      });
+      const p2 = delay(2000).then(() => {
+        console.log('p2 完成了');
+
+        return 'p2';
+        // return Promise.reject('reason');
+      });
+
+      // Promise.all() 的状态变化与所有传入的 Promise 实例对象状态有关
+      // 所有状态都变成 resolved，最终的状态才会变成 resolved
+      // 只要有一个变成 rejected，最终的状态就变成 rejected
+
+      const p = Promise.all([p1, p2]);
+      p.then(
+        data => {
+          console.log(data);
+        },
+        err => {
+          console.log(err);
+        }
+      );
+    </script>
+  </body>
+</html>

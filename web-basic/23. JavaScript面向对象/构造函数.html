@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function People(name, age, sex) {
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+            this.sayHello = function () {
+                console.log('你好，我是' + this.name + '，我今年' + this.age + '岁了，我是个' + this.sex + '生');
+            };
+            this.sleep = function () {
+                console.log(this.name + '开始睡觉，zzzzz');
+            };
+        }
+
+        var xiaoming = new People('小明', 12, '男');
+        var xiaohong = new People('小红', 4, '女');
+        var xiaogang = new People('小刚', 17, '男');
+
+        // console.log(xiaoming);
+        // console.log(xiaohong);
+        // console.log(xiaogang);
+
+        xiaohong.sayHello();
+        xiaogang.sleep();
+    </script>
+</body>
+</html>

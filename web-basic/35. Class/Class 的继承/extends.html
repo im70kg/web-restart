@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>extends</title>
+  </head>
+  <body>
+    <script>
+      // 1.子类继承父类
+      class Person {
+        constructor(name, sex) {
+          this.name = name;
+          this.sex = sex;
+
+          this.say = function () {
+            console.log('say');
+          };
+        }
+
+        speak() {
+          console.log('speak');
+        }
+
+        static speak() {
+          console.log('static speak');
+        }
+      }
+      Person.version = '1.0';
+
+      // class Programmer extends Person {
+      //   constructor(name, sex) {
+      //     super(name, sex);
+      //   }
+      // }
+
+      // const zs = new Programmer('zs', '男');
+      // console.log(zs.name);
+      // console.log(zs.sex);
+      // zs.say();
+      // zs.speak();
+      // Programmer.speak();
+      // console.log(Programmer.version);
+
+      // 2.改写继承的属性或方法
+      class Programmer extends Person {
+        constructor(name, sex, feature) {
+          // this.feature = feature; ×
+
+          // this 操作不能放在 super 前面
+          super(name, sex);
+
+          // this.feature = feature;
+        }
+
+        hi() {
+          console.log('hi');
+        }
+
+        // 同名覆盖
+        speak() {
+          console.log('Programmer speak');
+        }
+
+        static speak() {
+          console.log('Programmer static speak');
+        }
+      }
+      Programmer.version = '2.0';
+
+      const zs = new Programmer('zs', '男', '秃头');
+      console.log(zs.name);
+      console.log(zs.sex);
+      console.log(zs.feature);
+      zs.say();
+      zs.speak();
+      zs.hi();
+      Programmer.speak();
+      console.log(Programmer.version);
+    </script>
+  </body>
+</html>

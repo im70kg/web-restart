@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Map 实例的属性和方法</title>
+  </head>
+  <body>
+    <script>
+      // 1.方法
+      // set
+      const m = new Map();
+
+      // 使用 set 添加的新成员，键如果已经存在，后添加的键值对覆盖已有的
+      m.set('age', 18).set(true, 'true').set('age', 20);
+      // console.log(m);
+
+      // set get
+      // add
+
+      // get
+      console.log(m);
+      // console.log(m.get('age'));
+      // // get 获取不存在的成员，返回 undefined
+      // console.log(m.get('true'));
+      // console.log(m.get(true));
+
+      // has
+      // console.log(m.has('age'));
+      // console.log(m.has('true'));
+
+      // delete
+      // m.delete('age');
+      // m.delete('name');
+
+      // // 使用 delete 删除不存在的成员，什么都不会发生，也不会报错
+      // console.log(m);
+
+      // clear
+      // m.clear();
+      // console.log(m);
+
+      // forEach
+      // m.forEach(function (value, key, map) {
+      //   // console.log(value, key, map === m);
+      //   console.log(this);
+      // }, document);
+
+      // 2.属性
+      // size
+      // 对象没有类似的属性
+      console.log(m.size);
+    </script>
+  </body>
+</html>

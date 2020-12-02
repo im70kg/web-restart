@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>箭头函数中的 this 指向</title>
+  </head>
+  <body>
+    <script>
+      // 1.箭头函数中的 this 指向
+      // 箭头函数没有自己的 this
+      // const calc = {
+      //   add: () => {
+      //     console.log(this);
+      //   }
+      // };
+      // calc.add(); // window
+
+      // 2.练习
+      // 'use strict';
+      const calc = {
+        add: function () {
+          // this
+          const adder = () => {
+            console.log(this);
+          };
+          adder();
+        }
+      };
+      // calc.add(); // calc
+
+      const addFn = calc.add;
+      addFn(); // undefined->window
+    </script>
+  </body>
+</html>

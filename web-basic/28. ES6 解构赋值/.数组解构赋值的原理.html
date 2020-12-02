@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>数组解构赋值的原理</title>
+  </head>
+  <body>
+    <script>
+      // 1.模式（结构）匹配
+      // [] = [1, 2, 3];
+
+      // 2.索引值相同的完成赋值
+      // const [a, b, c] = [1, 2, 3];
+      // console.log(a, b, c);
+
+      // 不取的，可以直接用逗号跳过
+      const [a, [, , b], c] = [1, [2, 4, 5], 3];
+      console.log(a, b, c);
+    </script>
+  </body>
+</html>

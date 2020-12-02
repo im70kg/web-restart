@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 400px;
+            height: 300px;
+            padding: 10px;
+            border: 6px solid blue;
+            margin: 40px auto;
+        }
+
+        .box .c1 {
+            /* 老大实际占有的宽度是400px，实际占有的高度是200px，并且向下踹20px */
+            /* 它只给老二留下了80px */
+            width: 388px;
+            height: 188px;
+            border: 6px solid green;
+            margin-bottom: 20px;
+        }
+
+        .box .c2 {
+            /* 老二还剩下什么？剩下了400px宽度、80px高度总空间 */
+            width: 388px;
+            height: 48px;
+            padding: 10px 0;
+            border: 6px solid orange;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="c1">1</div>
+        <div class="c2">2</div>
+    </div>
+</body>
+
+</html>

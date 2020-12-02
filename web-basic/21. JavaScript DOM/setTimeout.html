@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn1">2秒后弹出你好</button>
+    <button id="btn2">取消弹出</button>
+
+    <script>
+        var btn1 = document.getElementById('btn1');
+        var btn2 = document.getElementById('btn2');
+        var timer;
+
+        btn1.onclick = function() {
+            timer = setTimeout(function () {
+                alert('你好');
+            }, 2000);
+        }
+        
+        btn2.onclick = function() {
+            clearTimeout(timer);
+        }
+    </script>
+</body>
+
+</html>

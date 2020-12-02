@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>非箭头函数中的 this 指向</title>
+  </head>
+  <body>
+    <script>
+      // 1.全局作用域中的 this 指向
+      // console.log(this); // window
+
+      // 2.一般函数（非箭头函数）中的 this 指向
+      // 'use strict';
+      function add() {
+        console.log(this);
+      }
+
+      // 严格模式就指向 undefined
+      // add(); // undefined->window（非严格模式下）
+
+      // window.add();
+
+      // const calc = {
+      //   add: add
+      // };
+      // // calc.add(); // calc
+      // const adder = calc.add;
+      // adder(); // undefined->window（非严格模式下）
+
+      // document.onclick = function () {
+      //   console.log(this);
+      // };
+      // document.onclick();
+
+      // function Person(username) {
+      //   this.username = username;
+      //   console.log(this);
+      // }
+
+      // const p = new Person('Alex');
+
+      // 只有在函数调用的时候 this 指向才确定，不调用的时候，不知道指向谁
+      // this 指向和函数在哪儿调用没关系，只和谁在调用有关
+      // 没有具体调用对象的话，this 指向 undefined，在非严格模式下，转向 window
+    </script>
+  </body>
+</html>

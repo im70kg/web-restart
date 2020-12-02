@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>let、const 与 var 的区别</title>
+  </head>
+  <body>
+    <script>
+      // 块级作用域
+      // 1.什么是块级作用域
+      // var 没有块级作用域
+      // for (var i = 0; i < 3; i++) {
+      //   // console.log(i);
+      // }
+      // console.log(i);
+
+      // let/const 有块级作用域
+      // for (let i = 0; i < 3; i++) {
+      //   // i = i+1
+      //   // console.log(i);
+      // }
+      // console.log(i);
+
+      // 2.作用域链
+      // function func() {
+      //   for (let i = 0; i < 3; i++) {
+      //     // console.log(i);
+      //   }
+      // }
+      // func();
+      // console.log(i);
+      // 作用域链：内层作用域->外层作用域->...->全局作用域
+
+      // 3.有哪些块级作用域
+      // {}
+      // {
+      //   let age = 18;
+      //   // console.log(age);
+      // }
+      // console.log(age);
+
+      // {}
+      // for(){}
+      // while(){}
+      // do{}while()
+      // if(){}
+      // switch(){}
+
+      // function(){}
+      // const person = {
+      //   getAge: function () {}
+      // };
+    </script>
+  </body>
+</html>

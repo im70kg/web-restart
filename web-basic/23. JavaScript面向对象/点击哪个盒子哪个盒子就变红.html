@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            float: left;
+            border: 1px solid #000;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box1"></div>
+    <div id="box2"></div>
+    <div id="box3"></div>
+
+    <script>
+        function setColorToRed() {
+            this.style.backgroundColor = 'red';
+        }
+
+        var box1 = document.getElementById('box1');
+        var box2 = document.getElementById('box2');
+        var box3 = document.getElementById('box3');
+
+        box1.onclick = setColorToRed;
+        box2.onclick = setColorToRed;
+        box3.onclick = setColorToRed;
+    </script>
+</body>
+</html>

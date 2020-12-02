@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>trimStart() 和 trimEnd()</title>
+  </head>
+  <body>
+    <input type="text" id="username" />
+    <input type="submit" value="提交" id="btn" />
+
+    <script>
+      // 清除字符串的首或尾空格，中间的空格不会清除
+
+      // 1.基本用法
+      // const s = '  a b c  ';
+      // console.log(s);
+      // // console.log(s.trimStart());
+      // // console.log(s.trimLeft());
+      // // console.log(s.trimEnd());
+      // // console.log(s.trimRight());
+      // console.log(s.trim());
+
+      // 2.应用
+      const usernameInput = document.getElementById('username');
+      const btn = document.getElementById('btn');
+
+      btn.addEventListener(
+        'click',
+        () => {
+          console.log(usernameInput.value);
+
+          // 验证
+          console.log(usernameInput.value.trim());
+          if (usernameInput.value.trim() !== '') {
+            // 可以提交
+            console.log('可以提交');
+          } else {
+            // 不能提交
+            console.log('不能提交');
+          }
+
+          // 手动提交
+        },
+        false
+      );
+    </script>
+  </body>
+</html>

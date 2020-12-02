@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="save.php" method="post">
+        <input type="text" value="123">
+        <input type="text" placeholder="请输入姓名">
+        <label>
+            <input type="radio"> 男
+        </label>
+        <label>
+            <input type="radio"> 女
+        </label>
+        <input type="radio" id="nan">
+        <label for="nan">男</label>
+        <select>
+            <option value="alipay">支付宝</option>
+            <option value="wx">微信</option>
+            <option value="bank">网银</option>
+        </select>
+        
+        <input list="province-list" />
+        <datalist id="province-list">
+            <option value="山东">
+            <option value="山西">
+            <option value="广东">
+            <option value="广西">
+            <option value="河南">
+            <option value="河北">
+            <option value="湖南">
+            <option value="湖北">
+        </datalist>
+    </form>
+</body>
+
+</html>

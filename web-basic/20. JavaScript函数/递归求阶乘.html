@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 书写一个函数，这个函数内部自己会调用自己，从而形成递归。
+        function factorial(n) {
+            // 函数的功能是计算n的阶乘，n!不就是n * (n-1)!么？？
+            // 这个就是递归的出口，如果计算1的阶乘，可以不用递归了，直接告诉你答案就是1
+            if (n == 1) return 1;
+            // 如果询问的不是1的阶乘，就返回n * (n-1)!
+            return n * factorial(n - 1);
+        }
+
+        var result = factorial(6);
+
+        alert(result);
+    </script>
+</body>
+
+</html>

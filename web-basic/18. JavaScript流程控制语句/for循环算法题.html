@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // // 循环开始的时候定义sum，sum就是累加器，初始值是0
+        // // 遍历1到100的每一个数字，每遍历一个数字要把这个数字加到sum中去
+        // for (var i = 1, sum = 0; i <= 100; i++) {
+        //     sum += i;
+        // }
+        // // 输出累加器的值
+        // console.log(sum);
+
+
+        // 寻找1~100的符合条件的数字：除以3余1，除以4余2，除以5余3
+        // 穷举法
+        for (var i = 1; i <= 100; i++) {
+            if (i % 3 == 1 && i % 4 == 2 && i % 5 == 3) {
+                console.log(i);
+            }
+        }
+    </script>
+</body>
+
+</html>

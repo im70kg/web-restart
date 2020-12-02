@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 什么参数都不加，自动得到今天此时此刻的日期对象
+        var d1 = new Date();
+        console.log(d1);
+        console.log(typeof d1);
+
+        // 得到六月一日
+        var d2 = new Date(2020, 5, 1);      // 不算时区
+        var d3 = new Date('2020-06-01');    // 算时区，8点
+
+        console.log(d2);
+        console.log(d3);
+    </script>
+</body>
+</html>

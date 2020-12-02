@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Array.from()</title>
+  </head>
+  <body>
+    <script>
+      // 将其他数据类型转换成数组
+
+      // 1.基本用法
+      // console.log(Array.from('str'));
+
+      // 2.哪些可以通过 Array.from() 转换成数组
+      // 2.1.所有可遍历的
+      // 数组、字符串、Set、Map、NodeList、arguments
+      // console.log(Array.from(new Set([1, 2, 1])));
+      // console.log([...new Set([1, 2, 1])]);
+
+      // 2.2.拥有 length 属性的任意对象
+      // const obj = {
+      //   '0': 'a',
+      //   '1': 'b',
+      //   name: 'Alex',
+      //   length: 3
+      // };
+      // console.log(Array.from(obj));
+      // console.log([...obj]); // ×
+
+      // 3.第二个参数
+      // 作用类似于数组的 map 方法，用来对每个元素进行处理，将处理后的值放入返回的数组
+      // console.log(
+      //   [1, 2].map(value => {
+      //     return value * 2;
+      //   })
+      // );
+      // console.log(Array.from('12', value => value * 2));
+      // console.log(Array.from('12').map(value => value * 2));
+
+      // 4.第三个参数
+      Array.from(
+        '12',
+        value => {
+          console.log(this);
+        },
+        document
+      );
+      Array.from(
+        '12',
+        function () {
+          console.log(this);
+        },
+        document
+      );
+    </script>
+  </body>
+</html>

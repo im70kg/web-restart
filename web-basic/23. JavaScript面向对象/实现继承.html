@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 父类，人类
+        function People(name, age, sex) {
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+        }
+        People.prototype.sayHello = function () {
+            console.log('你好，我是' + this.name + '我今年' + this.age + '岁了');
+        };
+        People.prototype.sleep = function () {
+            console.log(this.name + '开始睡觉，zzzzz');
+        };
+
+        // 子类，学生类
+        function Student(name, age, sex, scholl, studentNumber) {
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+            this.scholl = scholl;
+            this.studentNumber = studentNumber;
+        }
+        // 关键语句，实现继承
+        Student.prototype = new People();
+
+        Student.prototype.study = function () {
+            console.log(this.name + '正在学习');
+        }
+        Student.prototype.exam = function () {
+            console.log(this.name + '正在考试，加油！');
+        }
+        // 重写、复写（override）父类的sayHello
+        Student.prototype.sayHello = function () {
+            console.log('敬礼！我是' + this.name + '我今年' + this.age + '岁了');
+        }
+
+        // 实例化
+        var hanmeimei = new Student('韩梅梅', 9, '女', '慕课小学', 100556);
+
+        hanmeimei.study();
+        hanmeimei.sayHello();
+        hanmeimei.sleep();
+
+        var laozhang = new People('老张', 66, '男');
+        laozhang.sayHello();
+    </script>
+</body>
+
+</html>

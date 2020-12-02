@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>对象展开运算符的应用</title>
+  </head>
+  <body>
+    <script>
+      // 1.复制对象
+      // const a = { x: 1, y: 2 };
+      // // const b = a;
+
+      // const c = { ...a };
+      // console.log(c, c === a);
+
+      // 2.用户参数和默认参数
+      // add(1, 2);
+      // const logUser = ({
+      //   username = 'ZhangSan',
+      //   age = 0,
+      //   sex = 'male'
+      // } = {}) => {
+      //   console.log(username, age, sex);
+      // };
+
+      const logUser = userParam => {
+        const defaultParam = {
+          username: 'ZhangSan',
+          age: 0,
+          sex: 'male'
+        };
+
+        const param = { ...defaultParam, ...userParam };
+        // const param = { ...defaultParam, ...undefined };
+        console.log(param.username);
+        // const { username, age, sex } = { ...defaultParam, ...userParam };
+        // console.log(username, age, sex);
+      };
+      logUser();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Class 是什么</title>
+  </head>
+  <body>
+    <script>
+      // 1.认识 Class
+      // 人类：类
+      // 具体的人：实例、对象
+
+      // 类可以看做是对象的模板，用一个类可以创建出许多不同的对象
+
+      // 2.Class 的基本用法
+      // 类名一般大写
+      // class Person {} √
+      // class Person() {} ×
+      // class Person {}; ×
+      // function func() {}
+
+      // class Person {
+      //   // 实例化时执行构造方法，所以必须有构造方法，但可以不写出来
+      //   constructor(name, age) {
+      //     // console.log('实例化时执行构造方法');
+      // this 代表实例对象，上面定义的是实例属性/方法
+      //     this.name = name;
+      //     this.age = age;
+
+      //     // 一般在构造方法中定义属性，方法不在构造方法中定义
+      //     // this.speak = () => {};
+      //   }
+
+      //   // speak:function(){}
+
+      //   // 各实例共享的方法
+      //   speak() {
+      //     console.log('speak');
+      //   }
+      // }
+
+      // // Person();
+      // const zs = new Person('ZS', 18);
+      // const ls = new Person('LS', 28);
+      // // console.log(zs.name);
+      // // console.log(zs.age);
+      // // console.log(zs.speak);
+      // zs.speak();
+      // // console.log(ls.name);
+      // // console.log(ls.age);
+      // // console.log(ls.speak);
+      // console.log(zs.speak === ls.speak);
+
+      // 3.Class 与构造函数
+      class Person {
+        constructor(name, age) {
+          this.name = name;
+          this.age = age;
+
+          // this.speak = () => {};
+        }
+
+        speak() {
+          console.log('speak');
+        }
+
+        // run(){}
+      }
+      // Person.prototype.run = function () {};
+
+      // console.log(typeof Person);
+      // console.log(Person.prototype.speak);
+
+      // function Person(name, age) {
+      //   this.name = name;
+      //   this.age = age;
+
+      //   // this.speak = () => {};
+      // }
+      // Person.prototype.speak = function () {};
+    </script>
+  </body>
+</html>

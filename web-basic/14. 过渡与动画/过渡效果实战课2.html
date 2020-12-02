@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 508px;
+            height: 107px;
+            margin: 40px auto;
+        }
+
+        .box ul {
+            list-style: none;
+        }
+
+        .box ul li {
+            float: left;
+            width: 107px;
+            height: 107px;
+            margin-right: 20px;
+            /* 子绝父相 */
+            position: relative;
+        }
+
+        .box ul li::before {
+            content: '';
+            display: block;
+            width: 107px;
+            height: 107px;
+            transform: rotate(0);
+            transition: transform 1s ease 0s;
+        }
+
+        .box ul li:nth-child(1)::before {
+            background-image: url(images/a_1.png);
+        }
+
+        .box ul li:nth-child(2)::before {
+            background-image: url(images/a_2.png);
+        }
+
+        .box ul li:nth-child(3)::before {
+            background-image: url(images/a_3.png);
+        }
+
+        .box ul li:nth-child(4)::before {
+            background-image: url(images/a_4.png);
+        }
+
+        .box ul li img {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            top: 50%;
+            left: 50%;
+            margin-left: -30px;
+            margin-top: -30px;
+            transition: transform .5s ease 0s;
+        }
+
+        /* 背景圆环旋转一周 */
+        .box ul li:hover::before {
+            transform: rotate(360deg);
+        }
+
+        /* 中心图标放大1.2倍 */
+        .box ul li:hover img {
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <ul>
+            <li>
+                <img src="images/icon1.svg" alt="">
+            </li>
+            <li>
+                <img src="images/icon2.svg" alt="">
+            </li>
+            <li>
+                <img src="images/icon3.svg" alt="">
+            </li>
+            <li>
+                <img src="images/icon4.svg" alt="">
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

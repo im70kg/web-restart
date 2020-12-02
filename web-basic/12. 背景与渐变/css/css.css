@@ -1,0 +1,6 @@
+.box2{
+    width: 900px;
+    height: 600px;
+    border: 1px solid #000;
+    background-image: url(../images/archer.png);
+}

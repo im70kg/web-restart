@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Set 实例的方法和属性</title>
+  </head>
+  <body>
+    <script>
+      // 1.方法
+      // add
+      const s = new Set();
+      s.add(1).add(2).add(2);
+      // console.log(s);
+
+      // has
+      // console.log(s.has(1));
+      // console.log(s.has(3));
+
+      // delete
+      // s.delete(1);
+
+      // // 使用 delete 删除不存在的成员，什么都不会发生，也不会报错
+      // s.delete(3);
+      // console.log(s);
+
+      // clear
+      // s.clear();
+      // console.log(s);
+
+      // forEach
+      // s.forEach(function (value, key, set) {
+      //   // Set 中 value = key
+      //   console.log(value, key, set === s);
+      //   // console.log(this);
+      // }, document);
+      // console.log(s);
+
+      // 按照成员添加进集合的顺序遍历
+
+      // 2.属性
+      // size
+      console.log(s.size);
+      console.log(s);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            权重(2, 0, 1)
+         */
+        #box1 #box2 p {
+            color: red;
+        }
+
+        /* 
+            权重(2, 1, 2)
+         */
+        #box1 div.box2 #box3 p {
+            color: green;
+        }
+
+        /* 
+            权重(0, 3, 1)
+         */
+        .box1 .box2 .box3 p {
+            color: blue;
+        }
+
+
+        /* 
+            权重(0, 1, 1)
+         */
+        .list li {
+            color: red;
+        }
+        /* 
+            权重(0, 1, 0)
+         */
+        .spec {
+            color: blue !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box1" class="box1">
+        <div id="box2" class="box2">
+            <div id="box3" class="box3">
+                <p>我是段落</p>
+            </div>
+        </div>
+    </div>
+
+    <ul class="list">
+        <li>列表项</li>
+        <li class="spec">列表项</li>
+        <li class="spec">列表项</li>
+        <li>列表项</li>
+        <li>列表项</li>
+        <li>列表项</li>
+        <li>列表项</li>
+    </ul>
+</body>
+
+</html>

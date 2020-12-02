@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>对象解构赋值的注意事项</title>
+  </head>
+  <body>
+    <script>
+      // 1.默认值的生效条件
+      // 对象的属性值严格等于 undefined 时，对应的默认值才会生效
+      // const { username = 'ZhangSan', age = 0 } = { username: 'alex' };
+      // console.log(username, age);
+
+      // 2.默认值表达式
+      // 如果默认值是表达式，默认值表达式是惰性求值的
+
+      // 3.将一个已经声明的变量用于解构赋值
+      // 如果将一个已经声明的变量用于对象的解构赋值，整个赋值需在圆括号中进行
+      // let { x } = { x: 1 };
+      // console.log(x);
+
+      // let x = 2;
+      // // ({ x } = { x: 1 });
+      // [x] = [1];
+      // console.log(x);
+
+      // 4.可以取到继承的属性
+      // const { a = 1} = {};
+
+      const { toString } = {};
+      // console.log(toString);
+      // Object.prototype
+      // console.log(Object.prototype);
+      console.log({});
+    </script>
+  </body>
+</html>

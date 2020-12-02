@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 某学校的学号规定：第1位是一个字母，b表示本科生，y表示研究生，后面是7位数字，用正则表示为：
+        // 学号字符串
+        var str1 = 'm4444555';
+
+        // 用正则表达式进行检查
+        console.log(/^[by]\d{7}$/.test(str1));
+
+        // *******************************************
+        // 题目1：请验证某字符串是否是5位字母，大小写均可
+        var str2 = 'abcde';
+        var str3 = 'abcd5';
+        console.log(/^[a-zA-Z]{5}$/.test(str2));
+        console.log(/^[a-zA-Z]{5}$/.test(str3));
+
+        // 题目2：请验证某字符串是否是5位，且仅由小写字母、点构成
+        var str4 = 'mnp..';
+        var str5 = 'mnp.#';
+        console.log(/^[a-z\.]{5}$/.test(str4));
+        console.log(/^[a-z\.]{5}$/.test(str5));
+
+        // 题目3：请验证某字符串是否是4位小写字母，且最后一位不能是m字母
+        var str6 = 'abcd';
+        var str7 = 'abcm';
+        var str8 = 'ab1c';
+        console.log(/^[a-z]{3}[a-ln-z]$/.test(str6));
+        console.log(/^[a-z]{3}[a-ln-z]$/.test(str7));
+        console.log(/^[a-z]{3}[a-ln-z]$/.test(str8));
+    </script>
+</body>
+
+</html>

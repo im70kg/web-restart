@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Babel 是什么</title>
+  </head>
+  <body>
+    <script>
+      // 1.认识 Babel
+      // 官网：https://babeljs.io/
+      // 在线编译：https://babeljs.io/repl
+
+      // Babel 是 JavaScript 的编译器，用来将 ES6 的代码，转换成 ES6 之前的代码
+
+      // 2.使用 Babel
+      // ES6
+      let name = 'Alex';
+      const age = 18;
+
+      const add = (x, y) => x + y;
+
+      // Set Map
+
+      new Promise((resolve, reject) => {
+        resolve('成功');
+      }).then(value => {
+        console.log(value);
+      });
+
+      Array.from([1, 2]);
+
+      class Person {
+        constructor(name, age) {
+          Object.assign(this, { name, age });
+        }
+      }
+      new Person('Alex', 18);
+
+      import './index.js';
+
+      // 使用 Babel 编译后
+      ('use strict');
+
+      require('./index.js');
+
+      function _instanceof(left, right) {
+        if (
+          right != null &&
+          typeof Symbol !== 'undefined' &&
+          right[Symbol.hasInstance]
+        ) {
+          return !!right[Symbol.hasInstance](left);
+        } else {
+          return left instanceof right;
+        }
+      }
+
+      function _classCallCheck(instance, Constructor) {
+        if (!_instanceof(instance, Constructor)) {
+          throw new TypeError('Cannot call a class as a function');
+        }
+      }
+
+      var name = 'Alex';
+      var age = 18;
+
+      var add = function add(x, y) {
+        return x + y;
+      };
+
+      new Promise(function (resolve, reject) {
+        resolve('成功');
+      }).then(function (value) {
+        console.log(value);
+      });
+      Array.from([1, 2]);
+
+      var Person = function Person(name, age) {
+        _classCallCheck(this, Person);
+
+        Object.assign(this, {
+          name: name,
+          age: age
+        });
+      };
+
+      new Person('Alex', 18);
+
+      // 3.解释编译结果
+      // Babel 本身可以编译 ES6 的大部分语法，比如 let、const、箭头函数、类
+      // 但是对于 ES6 新增的 API，比如 Set、Map、Promise 等全局对象，以及一些定义在全局对象上的方法（比如 Object.assign/Array.from）都不能直接编译，需要借助其它的模块
+      // Babel 一般需要配合 Webpack 来编译模块语法
+    </script>
+  </body>
+</html>

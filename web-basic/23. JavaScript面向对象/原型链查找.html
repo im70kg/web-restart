@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function People(name, age, sex) {
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+        }
+        // 往原型上添加nationality属性
+        People.prototype.nationality = '中国';
+
+        var xiaoming = new People('小明', 12, '男');
+        
+        console.log(xiaoming.nationality);      // 中国
+        console.log(xiaoming);
+    </script>
+</body>
+</html>

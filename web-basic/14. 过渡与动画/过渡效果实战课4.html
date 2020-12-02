@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        section {
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            perspective: 10000px;
+        }
+        .box {
+            width: 200px;
+            height: 200px;
+            perspective: 10000px;
+            position: relative;
+            /* 设置变形类型，保留它内部的3D效果 */
+            /* 这个盒子又是舞台，又是演员，这个box整体带着里面的p旋转 */
+            transform-style: preserve-3d;
+            transition:all 10s ease 0s;
+        }
+
+        section:hover .box {
+            transform: rotateX(360deg) rotateY(360deg);
+        }
+
+        .box p {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 200px;
+        }
+
+        .box p:nth-child(1) {
+            background-color: rgba(219, 56, 211, 0.486);
+            /* 前面 */
+            transform: translateZ(100px);
+        }
+
+        .box p:nth-child(2) {
+            background-color: rgba(42, 128, 199, 0.486);
+            /* 顶面 */
+            transform: rotateX(90deg) translateZ(100px);
+        }
+
+        .box p:nth-child(3) {
+            background-color: rgba(56, 219, 83, 0.486);
+            /* 背面 */
+            transform: rotateX(180deg) translateZ(100px);
+        }
+
+        .box p:nth-child(4) {
+            background-color: rgba(213, 216, 32, 0.486);
+            /* 底面 */
+            transform: rotateX(-90deg) translateZ(100px);
+        }
+
+        .box p:nth-child(5) {
+            background-color: rgba(236, 82, 102, 0.486);
+            /* 侧面 */
+            transform: rotateY(90deg) translateZ(100px);
+        }
+
+        .box p:nth-child(6) {
+            background-color: rgba(119, 17, 236, 0.486);
+            /* 侧面 */
+            transform: rotateY(-90deg) translateZ(100px);
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="box">
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+        </div>
+    </section>
+</body>
+
+</html>

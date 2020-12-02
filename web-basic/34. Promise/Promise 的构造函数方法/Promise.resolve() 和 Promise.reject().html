@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Promise.resolve() 和 Promise.reject()</title>
+  </head>
+  <body>
+    <script>
+      // 1.Promise.resolve()
+      // 是成功状态 Promise 的一种简写形式
+      // new Promise(resolve => resolve('foo'));
+      // // 简写
+      // Promise.resolve('foo');
+
+      // 参数
+      // 一般参数
+      // Promise.resolve('foo').then(data => {
+      //   console.log(data);
+      // });
+
+      // Promise
+      // 当 Promise.resolve() 接收的是 Promise 对象时，直接返回这个 Promise 对象，什么都不做
+      // const p1 = new Promise(resolve => {
+      //   setTimeout(resolve, 1000, '我执行了');
+      //   // setTimeout(() => {
+      //   //   resolve('我执行了');
+      //   // }, 1000);
+      // });
+      // Promise.resolve(p1).then(data => {
+      //   console.log(data);
+      // });
+      // 等价于
+      // p1.then(data => {
+      //   console.log(data);
+      // });
+      // console.log(Promise.resolve(p1) === p1);
+
+      // 当 resolve 函数接收的是 Promise 对象时，后面的 then 会根据传递的 Promise 对象的状态变化决定执行哪一个回调
+      // new Promise(resolve => resolve(p1)).then(data => {
+      //   console.log(data);
+      // });
+
+      // 具有 then 方法的对象
+      // function func(obj) {
+      //   obj.then(1, 2);
+      // }
+      // func({
+      //   then(resolve, reject) {
+      //     console.log(a, b);
+      //   }
+      // });
+
+      // const thenable = {
+      //   then(resolve, reject) {
+      //     console.log('then');
+      //     resolve('data');
+      //     // reject('reason');
+      //   }
+      // };
+      // Promise.resolve(thenable).then(
+      //   data => console.log(data),
+      //   err => console.log(err)
+      // );
+      // console.log(Promise.resolve(thenable));
+
+      // 2.Promise.reject()
+      // 失败状态 Promise 的一种简写形式
+      // new Promise((resolve, reject) => {
+      //   reject('reason');
+      // });
+      // 等价于
+      // Promise.reject('reason');
+
+      // 参数
+      // 不管什么参数，都会原封不动地向后传递，作为后续方法的参数
+      // const p1 = new Promise(resolve => {
+      //   setTimeout(resolve, 1000, '我执行了');
+      // });
+      // Promise.reject(p1).catch(err => console.log(err));
+
+      new Promise((resolve, rejcet) => {
+        resolve(123);
+      })
+        .then(data => {
+          // return data;
+          // return Promise.resolve(data);
+
+          return Promise.reject('reason');
+        })
+        .then(data => {
+          console.log(data);
+        })
+        .catch(err => console.log(err));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        <p>我是p节点0</p>
+        <p>我是p节点1</p>
+        <p>我是p节点2</p>
+    </div>
+
+    <script>
+        var box = document.getElementById('box');
+        var the_first_p = box.getElementsByTagName('p')[0];
+
+        box.removeChild(the_first_p);
+    </script>
+</body>
+</html>

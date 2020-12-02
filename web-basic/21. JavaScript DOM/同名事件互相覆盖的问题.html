@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1{
+            width: 202px;
+            height: 202px;
+            border: 1px solid #000;
+            padding: 50px;
+        }
+        #box2{
+            width: 100px;
+            height: 100px;
+            border: 1px solid #000;
+            padding: 50px;
+        }
+        #box3{
+            width: 100px;
+            height: 100px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <div id="box1">
+        <div id="box2">
+            <div id="box3"></div>
+        </div>
+    </div>
+    <script>
+        var oBox1 = document.getElementById('box1');
+        var oBox2 = document.getElementById('box2');
+        var oBox3 = document.getElementById('box3');
+
+        oBox2.onclick = function () {
+            alert('A');
+        };
+
+        oBox2.onclick = function () {
+            alert('B');
+        };
+
+        oBox2.addEventListener('click', function() {
+            alert('C');
+        }, false);
+
+        oBox2.addEventListener('click', function() {
+            alert('D');
+        }, false);
+    </script>
+</body>
+</html>

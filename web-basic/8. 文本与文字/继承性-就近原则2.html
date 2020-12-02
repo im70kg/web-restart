@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 就近原则，谁描述的近，听谁的 */
+        #box1 #box2 {
+            color: red;
+        }
+
+        .box1 .box3 {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box1" class="box1">
+        <div id="box2" class="box2">
+            <div id="box3" class="box3">
+                <p>我是文字</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

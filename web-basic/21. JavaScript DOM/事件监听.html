@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <script>
+        var oBox = document.getElementById('box');
+
+        // 给box这个盒子添加点击事件监听
+        oBox.onclick = function () {
+            alert('你好，我是点击事件函数');
+        };
+    </script>
+</body>
+</html>

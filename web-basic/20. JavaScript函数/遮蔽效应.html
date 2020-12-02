@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 全局变量
+        var a = 10;
+
+        function fun() {
+            // 局部变量，会把全局的变量a遮蔽
+            var a = 5;
+            a++;
+            console.log(a);
+        }
+        fun();
+        console.log(a);
+        
+    </script>
+</body>
+</html>

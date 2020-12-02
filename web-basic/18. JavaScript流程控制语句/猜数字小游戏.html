@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 随机一个数字，2~99之间
+        var answer = parseInt(Math.random() * 98) + 2;
+        // 此时范围的最小值和最大值，这个数值是用来提示用户的
+        var min = 1;
+        var max = 100;
+
+        do {
+            // 询问用户猜测的数字
+            var n = Number(prompt('请猜测数字' + min + '~' + max));
+            // 验证用户输入的数字是否在范围内
+            if (n <= min || n >= max) {
+                alert('你输入的数字不在范围内');
+                // 不在区间内，直接放弃这次循环，就开启下一次迭代
+                continue;
+            }
+
+            // 判断用户输入的数字和answer的关系
+            if (n > answer) {
+                alert('你输入的数字太大了');
+                // 因为用户输入的数字较大，所以可以让此时的最大范围数字变为用户输入的值
+                max = n;
+            } else if (n < answer) {
+                alert('你输入的数字太小了');
+                // 因为用户输入的数字较小，所以可以让此时的最小范围数字变为用户输入的值
+                min = n;
+            }
+        } while (n != answer);
+
+        // 出了do while循环，就说明n和answer相等了，因为只有相等了，才能出循环。
+        alert('恭喜猜对了！');
+    </script>
+</body>
+
+</html>

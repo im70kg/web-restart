@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>finally()</title>
+  </head>
+  <body>
+    <script>
+      // 1.什么时候执行
+      // 当 Promise 状态发生变化时，不论如何变化都会执行，不变化不执行
+      // new Promise((resolve, reject) => {
+      //   // resolve(123);
+      //   reject('reason');
+      // })
+      //   .finally(data => {
+      //     console.log(data);
+      //   })
+      //   .catch(err => {});
+
+      // 2.本质
+      // finally() 本质上是 then() 的特例
+
+      // new Promise((resolve, reject) => {
+      //   // resolve(123);
+      //   reject('reason');
+      // })
+      //   .finally(data => {
+      //     console.log(data);
+      //   })
+      //   .catch(err => {});
+      // 等同于
+      new Promise((resolve, reject) => {
+        // resolve(123);
+        reject('reason');
+      })
+        .then(
+          result => {
+            return result;
+          },
+          err => {
+            return new Promise((resolve, reject) => {
+              reject(err);
+            });
+          }
+        )
+        .then(data => {
+          console.log(data);
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    </script>
+  </body>
+</html>

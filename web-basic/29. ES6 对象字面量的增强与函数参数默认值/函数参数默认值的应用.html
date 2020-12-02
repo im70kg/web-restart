@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>函数参数默认值的应用</title>
+  </head>
+  <body>
+    <script>
+      // 1.接收很多参数的时候
+      // const logUser = (username = 'ZhangSan', age = 0, sex = 'male') =>
+      //   console.log(username, age, sex);
+      // logUser('Alex', 18, 'male');
+      // logUser();
+
+      // 2.接收一个对象作为参数
+      // const logUser = options =>
+      // console.log(options.username, options.age, options.sex);
+
+      const logUser = ({ username = 'zhangsan', age = 0, sex = 'male' } = {}) =>
+        console.log(username, age, sex);
+      // logUser({
+      //   username: 'alex',
+      //   age: 18,
+      //   sex: 'male'
+      // });
+      // logUser({ username: 'alex' });
+      // { username = 'zhangsan', age = 0, sex = 'male' } = { username: 'alex' }
+
+      // logUser({});
+      logUser();
+      // { username = 'zhangsan', age = 0, sex = 'male' } = {}
+
+      // { username = 'zhangsan', age = 0, sex = 'male' } = undefined
+    </script>
+  </body>
+</html>

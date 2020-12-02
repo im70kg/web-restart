@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 寻找水仙花数
+        for (var i = 100; i < 1000; i++) {
+            // 水仙花数要拆数位
+            // a、b、c分别表示百位、十位、个位
+            var i_str = i.toString();
+            var a = i_str.charAt(0);
+            var b = i_str.charAt(1);
+            var c = i_str.charAt(2);
+
+            if(Math.pow(a, 3) + Math.pow(b, 3) + Math.pow(c, 3) == i) {
+                console.log(i);
+            }
+        }
+    </script>
+</body>
+</html>

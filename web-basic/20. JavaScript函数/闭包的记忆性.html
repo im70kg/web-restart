@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function createCheckTemp(standardTemp) {
+            function checkTemp(n) {
+                if (n <= standardTemp) {
+                    alert('你的体温正常');
+                } else {
+                    alert('你的体温偏高');
+                }
+            }
+            return checkTemp;
+        }
+
+        // 创建一个checkTemp函数，它以37.1度为标准线
+        var checkTemp_A = createCheckTemp(37.1);
+        // 再创建一个checkTemp函数，它以37.3度为标准线
+        var checkTemp_B = createCheckTemp(37.3);
+        
+        checkTemp_A(37.2);
+        checkTemp_A(37.0);
+        checkTemp_B(37.2);
+        checkTemp_B(37.0);
+    </script>
+</body>
+
+</html>

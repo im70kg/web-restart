@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            /* 边框 */
+            border: 1px solid #000;
+            /* 外边距 */
+            margin-bottom: 10px;
+            /* 字号 */
+            font-size: 40px;
+        }
+
+        .box1 p:first-child {
+            color: red;
+        }
+
+        .box1 p:last-child {
+            color: blue;
+        }
+
+        .box2 p:nth-child(3) {
+            color: green;
+        }
+
+        .box3 p:nth-child(odd) {
+            color: orange;
+        }
+
+        .box4 p:nth-of-type(3) {
+            color: blue;
+        }
+
+        .box4 h3:nth-of-type(3) {
+            color: rgb(136, 50, 79);
+        }
+
+        .box5 p:nth-last-child(2) {
+            color: sienna;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <p>4</p>
+        <p>5</p>
+        <p>6</p>
+        <p>7</p>
+        <p>8</p>
+        <p>9</p>
+    </div>
+
+    <div class="box2">
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <p>4</p>
+        <p>5</p>
+        <p>6</p>
+        <p>7</p>
+        <p>8</p>
+        <p>9</p>
+    </div>
+
+    <div class="box3">
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <p>4</p>
+        <p>5</p>
+        <p>6</p>
+        <p>7</p>
+        <p>8</p>
+        <p>9</p>
+    </div>
+
+    <div class="box4">
+        <p>我是1号p</p>
+        <p>我是2号p</p>
+        <h3>我是1号h3</h3>
+        <h3>我是2号h3</h3>
+        <p>我是3号p</p>
+        <p>我是4号p</p>
+        <h3>我是3号h3</h3>
+        <h3>我是4号h3</h3>
+    </div>
+
+    <div class="box5">
+        <p>我是1号p</p>
+        <p>我是2号p</p>
+        <p>我是3号p</p>
+        <p>我是4号p</p>
+    </div>
+</body>
+
+</html>

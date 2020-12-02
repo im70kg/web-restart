@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 不管用户传入多少个实际参数，永远能够计算它们的和
+        function fun() {
+            var sum = 0;
+            for (var i = 0; i < arguments.length; i++) {
+                sum += arguments[i];
+            }
+            console.log('所有参数的和是' + sum);
+        }
+
+        fun(33, 44, 23, 34);
+        fun(44);
+        fun(-3, 4);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>模板字符串的应用</title>
+    <style>
+      body {
+        padding: 50px 0 0 300px;
+        font-size: 22px;
+      }
+
+      ul {
+        padding: 0;
+      }
+
+      p {
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <p>学生信息表</p>
+    <ul id="list">
+      <li style="list-style: none;">信息加载中……</li>
+    </ul>
+
+    <script>
+      // 数据
+      const students = [
+        {
+          username: 'Alex',
+          age: 18,
+          sex: 'male'
+        },
+        {
+          username: 'ZhangSan',
+          age: 28,
+          sex: 'male'
+        },
+        {
+          username: 'LiSi',
+          age: 20,
+          sex: 'female'
+        }
+      ];
+
+      const list = document.getElementById('list');
+
+      let html = '';
+
+      for (let i = 0; i < students.length; i++) {
+        html += `<li>我的名字是：${students[i].username},${students[i].sex},${students[i].age}</li>`;
+      }
+
+      // console.log(html);
+      list.innerHTML = html;
+    </script>
+  </body>
+</html>

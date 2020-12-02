@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="list">
+        <li>列表项</li>
+        <li>列表项</li>
+        <li>列表项</li>
+        <li>列表项</li>
+        <li>列表项</li>
+        <li>列表项</li>
+        <li>列表项</li>
+        <li>列表项</li>
+        <li>列表项</li>
+        <li>列表项</li>
+        <li>列表项</li>
+        <li>列表项</li>
+        <li>列表项</li>
+        <li>列表项</li>
+        <li>列表项</li>
+        <li>列表项</li>
+        <li>列表项</li>
+        <li>列表项</li>
+        <li>列表项</li>
+        <li>列表项</li>
+    </ul>
+
+    <script>
+        var oList = document.getElementById('list');
+        var lis = oList.getElementsByTagName('li');
+
+        // 书写循环语句，批量给元素添加监听
+        for (var i = 0; i < lis.length; i++) {
+            lis[i].onclick = function () {
+                // 在这个函数中，this表示点击的这个元素，this涉及函数上下文的相关知识，我们在“面向对象”课程中介绍
+                this.style.color = 'red';
+            };
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Module 的注意事项</title>
+  </head>
+  <body>
+    <!-- <script src="./module.js"></script> -->
+    <!-- <script src="./module.js" type="module"></script> -->
+
+    <script type="module">
+      // 1.模块顶层的 this 指向
+      // 模块中，顶层的 this 指向 undefined
+      // import './module.js';
+
+      // 2.import 和 import()
+      // import 命令具有提升效果，会提升到整个模块的头部，率先执行
+      // console.log('沙发');
+      // console.log('第二');
+      // import './module.js';
+
+      // import 执行的时候，代码还没执行
+      // import 和 export 命令只能在模块的顶层，不能在代码块中执行
+      // if (PC) {
+      //   import 'pc.js';
+      // } else if (Mobile) {
+      //   import 'mobile.js';
+      // }
+
+      // import() 可以按条件导入
+      // if (PC) {
+      //   import('pc.js').then().catch();
+      // } else if (Mobile) {
+      //   import('mobile.js').then().catch();
+      // }
+
+      // 3.导入导出的复合写法
+      // 复合写法导出的，无法在当前模块中使用
+      export { age } from './module.js';
+      // console.log(age);
+
+      // 等价于
+      // import { age } from './module.js';
+      // export { age } from './module.js';
+      // console.log(age);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>原生可遍历和非原生可遍历</title>
+  </head>
+  <body>
+    <p>1</p>
+    <p>2</p>
+    <p>3</p>
+    <script>
+      // 1.什么是可遍历
+      // 只要有 Symbol.iterator 方法，并且这个方法可以生成可遍历对象，就是可遍历的
+
+      // 只要可遍历，就可以使用 for...of 循环来统一遍历
+
+      // 2.原生可遍历的有哪些
+      // 数组
+      // 字符串
+      // Set
+      // Map
+      // arguments
+      // NodeList
+
+      // for (const item of [1, 2, 3]) {
+      //   console.log(item);
+      // }
+      // for (const item of 'hi') {
+      //   console.log(item);
+      // }
+      // for (const item of new Set([1, 2])) {
+      //   console.log(item);
+      // }
+      // for (const elem of document.querySelectorAll('p')) {
+      //   console.log(elem);
+      //   elem.style.color = 'red';
+      // }
+
+      // 3.非原生可遍历的有哪些
+      // 一般的对象
+      const person = { sex: 'male', age: 18 };
+      // console.log(person[Symbol.iterator]());
+
+      // {next()} {value,done}
+      // person[Symbol.iterator] = () => {
+      //   let index = 0;
+      //   return {
+      //     next() {
+      //       index++;
+
+      //       if (index === 1) {
+      //         return {
+      //           value: person.age,
+      //           done: false
+      //         };
+      //       } else if (index === 2) {
+      //         return {
+      //           value: person.sex,
+      //           done: false
+      //         };
+      //       } else {
+      //         return {
+      //           done: true
+      //         };
+      //       }
+      //     }
+      //   };
+      // };
+
+      // for (const item of person) {
+      //   console.log(item);
+      // }
+      // for in
+
+      // 有 length 和索引属性的对象
+      const obj = {
+        '0': 'alex',
+        '1': 'male',
+        length: 2
+      };
+
+      obj[Symbol.iterator] = Array.prototype[Symbol.iterator];
+
+      // obj[Symbol.iterator] = () => {
+      //   let index = 0;
+
+      //   return {
+      //     next() {
+      //       let value, done;
+      //       if (index < obj.length) {
+      //         value = obj[index];
+      //         done = false;
+      //       } else {
+      //         value = undefined;
+      //         done = true;
+      //       }
+
+      //       index++;
+
+      //       return {
+      //         value,
+      //         done
+      //       };
+      //     }
+      //   };
+      // };
+      for (const item of obj) {
+        console.log(item);
+      }
+    </script>
+  </body>
+</html>

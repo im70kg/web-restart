@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 定义一个函数，这个函数的功能就是计算a到b之间所有整数的和
+        function calcSumFromAtoB(a, b) {
+            for (var i = a, sum = 0; i <= b; i++) {
+                sum += i;
+            }
+            console.log('从' + a + '到' + b + '的所有整数和是' + sum);
+        }
+
+        calcSumFromAtoB(3, 7);
+    </script>
+</body>
+
+</html>

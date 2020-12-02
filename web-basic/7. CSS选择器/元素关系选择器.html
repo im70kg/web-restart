@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box>p {
+            color: red;
+        }
+
+        img {
+            width: 300px;
+        }
+
+        img+span {
+            color: green;
+        }
+
+        h3~span {
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <p>我是段落</p>
+        <p>我是段落</p>
+        <div>
+            <p>我是段落</p>
+            <p>我是段落</p>
+        </div>
+    </div>
+    <p>我是段落</p>
+    <p>我是段落</p>
+
+    <p>
+        <img src="images/0.jpg" alt="">
+        <span>这是北京故宫</span>
+    </p>
+    <p>
+        <img src="images/1.jpg" alt="">
+        <span>这是北京鸟巢</span>
+    </p>
+
+    <span>你好</span>
+    <span>你好</span>
+
+    <h3>我是一个三级标题</h3>
+    <span>我是后面的span</span>
+    <span>我是后面的span</span>
+    <span>我是后面的span</span>
+    <span>我是后面的span</span>
+    <p>我是一个段落</p>
+    <span>我是后面的span</span>
+    <span>我是后面的span</span>
+    <div>
+        <span>多了一个级别span</span>
+        <span>多了一个级别span</span>
+    </div>
+</body>
+
+</html>

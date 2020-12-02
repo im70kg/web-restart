@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Map 构造函数的参数</title>
+  </head>
+  <body>
+    <script>
+      // 1.数组
+      // console.log(new Map(['name', 'alex', 'age', 18]));
+      // 只能传二维数组，而且必须体现出键和值
+
+      // console.log(
+      //   new Map([
+      //     ['name', 'alex'],
+      //     ['age', 18]
+      //   ])
+      // );
+
+      // 2.Set、Map 等
+      // Set
+      // Set 中也必须体现出键和值
+      // const s = new Set([
+      //   ['name', 'alex'],
+      //   ['age', 18]
+      // ]);
+      // console.log(new Map(s));
+      // console.log(s);
+
+      // Map
+      // 复制了一个新的 Map
+      const m1 = new Map([
+        ['name', 'alex'],
+        ['age', 18]
+      ]);
+      console.log(m1);
+      const m2 = new Map(m1);
+      console.log(m2, m2 === m1);
+    </script>
+  </body>
+</html>

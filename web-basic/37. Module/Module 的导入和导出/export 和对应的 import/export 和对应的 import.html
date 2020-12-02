@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>export 和对应的 import</title>
+  </head>
+  <body>
+    <script type="module">
+      // 1.基本用法
+      // export 声明或语句
+      // export const age = 18;
+
+      // const age = 18;
+      // export { age };
+
+      // 不能随意命名
+      // import { age } from './module.js';
+      // console.log(age);
+
+      // import aaa from './module.js'; // 对应 export default
+
+      // 2.多个导出
+      // import { fn } from './module.js';
+      // console.log(fn);
+      // import { className } from './module.js';
+      // console.log(className);
+
+      // import { fn, age, className } from './module.js';
+      // console.log(fn, age, className);
+
+      // 3.导出导入时起别名
+      // export { fn as func, className, age };
+      // import { func, age, className as Person } from './module.js';
+      // console.log(Person);
+
+      // 4.整体导入
+      // 会导入所有输出，包括通过 export default 导出的
+      // import { func, age, className } from './module.js';
+      // console.log(func, age, className);
+
+      // import obj from './module.js';
+      // import * as obj from './module.js';
+      // console.log(obj);
+
+      // 5.同时导入
+      // import { func, age, className } from './module.js';
+      // import age2 from './module.js';
+
+      // 一定是 export default 的在前
+      // import age2, { func, age, className } from './module.js';
+      // import { func, age, className },age2 from './module.js'; ×
+      console.log(age2);
+    </script>
+  </body>
+</html>

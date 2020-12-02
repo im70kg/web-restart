@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function People() {
+            this.sayHello = function () {
+            };
+        }
+        var xiaoming = new People();
+        var xiaohong = new People();
+        var xiaogang = new People();
+
+        console.log(xiaoming.sayHello === xiaohong.sayHello);
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        td {
+            width: 20px;
+            height: 20px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+
+<body>
+    <table id="mytable"></table>
+
+    <script>
+        // 请动态创建出一个20行12列的表格
+        var mytable = document.getElementById('mytable');
+
+        for (var i = 0; i < 20; i++) {
+            // 创建了新的tr标签
+            var tr = document.createElement('tr');
+            for (var j = 0; j < 12; j++) {
+                // 创建了新的td标签
+                var td = document.createElement('td');
+                // 让tr追加td标签
+                tr.appendChild(td);
+            }
+            // 让mytable追加tr标签
+            mytable.appendChild(tr);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a = new Number(123);
+        var b = new String('慕课网');
+        var c = new Boolean(true);
+        
+        console.log(a);
+        console.log(typeof a);      // object
+        console.log(b);
+        console.log(typeof b);      // object
+        console.log(c);
+        console.log(typeof c);      // object
+
+        console.log(5 + a);         // 128
+        console.log(b.slice(0, 2)); // '慕课'
+        console.log(c && true);     // true
+
+        var d = 123;
+        console.log(d.__proto__ == Number.prototype);       // true
+
+        var e = '慕课网';
+        console.log(e.__proto__ == String.prototype);       // true
+        console.log(String.prototype.hasOwnProperty('toLowerCase'));    // true
+        console.log(String.prototype.hasOwnProperty('slice'));          // true
+        console.log(String.prototype.hasOwnProperty('substr'));         // true
+        console.log(String.prototype.hasOwnProperty('substring'));      // true
+    </script>
+</body>
+</html>

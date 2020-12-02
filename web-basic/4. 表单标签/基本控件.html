@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="tijiao.php" method="POST">
+        <p>
+            请输入你的姓名：<input type="text">
+        </p>
+        <p>
+            报考院校：<input type="text" value="清华大学" disabled>
+        </p>
+        <p>
+            毕业学校：<input type="text" placeholder="请输入真实的毕业学校哦">
+        </p>
+        <p>
+            性别：
+            <label>
+                <input type="radio" name="sex" value="男" checked> 男
+            </label>
+            
+            <label>
+                <input type="radio" name="sex" value="女"> 女
+            </label>
+        </p>
+        <p>
+            血型：
+            <input type="radio" name="bloodtype" checked id="A"> <label for="A">A</label>
+            <input type="radio" name="bloodtype" id="B"> <label for="B">B</label>
+            <input type="radio" name="bloodtype" id="C"> <label for="C">C</label>
+            <input type="radio" name="bloodtype" id="O"> <label for="O">O</label>
+            <input type="radio" name="bloodtype" id="AB"> <label for="AB">AB</label>
+        </p>
+        <p>
+            爱好：
+            <label>
+                <input type="checkbox" name="hobby" value="足球"> 足球
+            </label>
+            <label>
+                <input type="checkbox" name="hobby" value="蓝球"> 蓝球
+            </label>
+            <label>
+                <input type="checkbox" name="hobby" value="羽毛球"> 羽毛球
+            </label>
+            <label>
+                <input type="checkbox" name="hobby" value="游泳"> 游泳
+            </label>
+        </p>
+        <p>
+            请输入密码：
+            <input type="password">
+        </p>
+        <p>
+            请选择你最喜欢的编程语言：
+            <select>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Java">Java</option>
+                <option value="PHP">PHP</option>
+                <option value="C++">C++</option>
+            </select>
+        </p>
+        <p>
+            留言：
+            <textarea cols="100" rows="10"></textarea>
+        </p>
+        <p>
+            <button>我是一个普通按钮</button>
+        </p>
+        <p>
+            <input type="button" value="我是一个普通按钮">
+        </p>
+        <p>
+            <input type="submit" value="提交表单">
+        </p>
+        <p>
+            <input type="reset" value="重置表单">
+        </p>
+    </form>
+</body>
+</html>

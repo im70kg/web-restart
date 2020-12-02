@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 计算阶乘
+
+        // 请用户输入数字n
+        var n = Number(prompt('请输入数字'));
+
+        // 累乘器，一定注意，累乘器要从1开始，因为如果从0开始，0乘以任何数字都是0,
+        var result = 1;
+
+        // 倒着遍历，计算阶乘
+        for (var i = n; i >= 1; i--) {
+            result *= i;
+        }
+
+        // 显示结果
+        alert(result);
+    </script>
+</body>
+
+</html>

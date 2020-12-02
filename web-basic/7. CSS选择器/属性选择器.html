@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 300px;
+        }
+
+        /* 
+            [alt] 有这个属性
+            [alt = "北京故宫"] 精确匹配
+            [alt ^= "abc"] 开头匹配
+            [alt $= "abc"] 结尾匹配
+            [alt *= "abc"] 任意位置匹配
+            [alt |= "abc"] abc-开头
+            [alt ~= "abc"] abc为空格分开的独立部分
+         */
+
+        img[alt|="参赛作品"] {
+            border: 3px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="images/bj/0.jpg" alt="参赛作品-北京故宫">
+    <img src="images/bj/1.jpg" alt="北京鸟巢国家体育场夜景">
+    <img src="images/bj/2.jpg" alt="北京十七孔桥 手机拍摄">
+
+    <img src="images/wx/0.jpg" alt="参赛作品-无锡体育场">
+    <img src="images/wx/1.jpg" alt="无锡太湖 手机拍摄">
+    <img src="images/wx/2.jpg" alt="无锡鼋头渚 手机拍摄">
+    <img src="images/wx/3.jpg" alt="参赛作品-无锡夜景">
+</body>
+
+</html>

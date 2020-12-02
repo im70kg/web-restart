@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .dengpao {
+            position: absolute;
+            top: 300px;
+            left: 300px;
+        }
+        .guang {
+            position: absolute;
+            top: 235px;
+            left: 222px;
+            animation: ss 1s ease 0s infinite alternate;
+        }
+
+        @keyframes ss {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
+        }
+
+        .huojian {
+            position: absolute;
+            top: 300px;
+            left: 800px;
+            animation: zd .4s linear 0s infinite alternate;
+        }
+
+        @keyframes zd {
+            from {
+                transform: translateX(-20px) translateY(-20px);
+            }
+            to {
+                transform: translateX(20px) translateY(20px);
+            }
+        }
+
+        .line1 {
+            width: 2px;
+            height: 166px;
+            background-color: blue;
+            position: absolute;
+            top: 300px;
+            left: 800px;
+            transform: rotate(45deg);
+            animation: yd 1s linear 0s infinite;
+            opacity: 0;
+        }
+        .line2 {
+            width: 2px;
+            height: 266px;
+            background-color: blue;
+            position: absolute;
+            top: 340px;
+            left: 850px;
+            transform: rotate(45deg);
+            animation: yd 1s linear .4s infinite;
+            opacity: 0;
+        }
+        .line3 {
+            width: 2px;
+            height: 266px;
+            background-color: blue;
+            position: absolute;
+            top: 390px;
+            left: 890px;
+            transform: rotate(45deg);
+            animation: yd 1s linear .68s infinite;
+            opacity: 0;
+        }
+        .line4 {
+            width: 2px;
+            height: 266px;
+            background-color: blue;
+            position: absolute;
+            top: 390px;
+            left: 920px;
+            transform: rotate(45deg);
+            animation: yd 1s linear .2s infinite;
+            opacity: 0;
+        }
+        @keyframes yd {
+            0% {
+                transform: rotate(45deg) translateY(-300px);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: rotate(45deg) translateY(300px);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <img class="dengpao" src="images/dengpao.png" alt="">
+    <img class="guang" src="images/guang.png" alt="">
+
+    <img class="huojian" src="images/huojian.png" alt="">
+    <div class="line1"></div>
+    <div class="line2"></div>
+    <div class="line3"></div>
+    <div class="line4"></div>
+</body>
+</html>

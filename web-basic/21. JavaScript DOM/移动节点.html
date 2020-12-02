@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box1">
+        <p id="para">我是段落</p>
+    </div>
+
+    <div id="box2">
+        <p>我是box2的原有p标签</p>
+        <p>我是box2的原有p标签</p>
+        <p>我是box2的原有p标签</p>
+        <p>我是box2的原有p标签</p>
+    </div>
+
+    <script>
+        var box1 = document.getElementById('box1');
+        var box2 = document.getElementById('box2');
+        var para = document.getElementById('para');
+        var ps_inbox2 = box2.getElementsByTagName('p');
+
+        // box2.appendChild(para);
+        box2.insertBefore(para, ps_inbox2[0]);
+    </script>
+</body>
+</html>

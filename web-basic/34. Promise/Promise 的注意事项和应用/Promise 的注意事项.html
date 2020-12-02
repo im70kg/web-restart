@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Promise 的注意事项</title>
+  </head>
+  <body>
+    <script>
+      // 1.resolve 或 reject 函数执行后的代码
+      // 推荐在调用 resolve 或 reject 函数的时候加上 return，不再执行它们后面的代码
+      // new Promise((resolve, reject) => {
+      //   // return resolve(123);
+      //   return reject('reason');
+
+      //   console.log('hi');
+      // });
+
+      // 2.Promise.all/race/allSettled 的参数问题
+      // 参数如果不是 Promise 数组，会将不是 Promise 的数组元素转变成 Promise 对象
+      // Promise.all([1, 2, 3]).then(datas => {
+      //   console.log(datas);
+      // });
+      // 等价于
+      // Promise.all([
+      //   Promise.resolve(1),
+      //   Promise.resolve(2),
+      //   Promise.resolve(3)
+      // ]).then(datas => {
+      //   console.log(datas);
+      // });
+
+      // 不只是数组，任何可遍历的都可以作为参数
+      // 数组、字符串、Set、Map、NodeList、arguments
+      // Promise.all(new Set([1, 2, 3])).then(datas => {
+      //   console.log(datas);
+      // });
+
+      // 3.Promise.all/race/allSettled 的错误处理
+      const delay = ms => {
+        return new Promise(resolve => {
+          setTimeout(resolve, ms);
+        });
+      };
+
+      const p1 = delay(1000).then(() => {
+        console.log('p1 完成了');
+
+        // return 'p1';
+        return Promise.reject('reason');
+      });
+      // .catch(err => {
+      //   console.log('p1', err);
+      // });
+      const p2 = delay(2000).then(() => {
+        console.log('p2 完成了');
+
+        return 'p2';
+        // return Promise.reject('reason');
+      });
+      // // .catch(err => {
+      // //   console.log('p2', err);
+      // });
+
+      const allPromise = Promise.all([p1, p2]);
+      allPromise
+        .then(datas => {
+          console.log(datas);
+        })
+        .catch(err => console.log(err));
+
+      // 错误既可以单独处理，也可以统一处理
+      // 一旦被处理，就不会在其他地方再处理一遍
+    </script>
+  </body>
+</html>

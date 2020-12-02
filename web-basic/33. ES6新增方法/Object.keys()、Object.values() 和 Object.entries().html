@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Object.keys()、Object.values() 和 Object.entries()</title>
+  </head>
+  <body>
+    <script>
+      // 1.基本用法
+      // const person = {
+      //   name: 'Alex',
+      //   age: 18
+      // };
+
+      // console.log(Object.keys(person));
+      // console.log(Object.values(person));
+      // console.log(Object.entries(person));
+
+      // 2.与数组类似方法的区别
+      // console.log([1, 2].keys());
+      // console.log([1, 2].values());
+      // console.log([1, 2].entries());
+      // console.log(person.keys);
+
+      // 数组的 keys()、values()、entries() 等方法是实例方法，返回的都是 Iterator
+      // 对象的 Object.keys()、Object.values()、Object.entries() 等方法是构造函数方法，返回的是数组
+
+      // 3.使用 for...of 循环遍历对象
+      const person = {
+        name: 'Alex',
+        age: 18
+      };
+      // for (const key of Object.keys(person)) {
+      //   console.log(key);
+      // }
+      // for (const value of Object.values(person)) {
+      //   console.log(value);
+      // }
+      // for (const entries of Object.entries(person)) {
+      //   console.log(entries);
+      // }
+      // for (const [key, value] of Object.entries(person)) {
+      //   console.log(key, value);
+      // }
+
+      // Object.keys()/values()/entires() 并不能保证顺序一定是你看到的样子，这一点和 for in 是一样的
+    </script>
+  </body>
+</html>

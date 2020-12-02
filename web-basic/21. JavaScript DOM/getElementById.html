@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 给window对象添加onload事件监听。onload表示页面都加载完毕了。
+        window.onload = function () {
+            // 得到盒子1
+            var box1 = document.getElementById('box1');
+            // 得到盒子2
+            var box2 = document.getElementById('box2');
+
+            console.log(box1);
+            console.log(box2);
+        };
+    </script>
+</head>
+
+<body>
+    <div id="box1">我是盒子1</div>
+    <div id="box2">我是盒子2</div>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Promise.race() 和 Promise.allSettled()</title>
+  </head>
+  <body>
+    <script>
+      const delay = ms => {
+        return new Promise(resolve => {
+          setTimeout(resolve, ms);
+        });
+      };
+      const p1 = delay(1000).then(() => {
+        console.log('p1 完成了');
+
+        return 'p1';
+        // return Promise.reject('reason');
+      });
+      const p2 = delay(2000).then(() => {
+        console.log('p2 完成了');
+
+        // return 'p2';
+        return Promise.reject('reason');
+      });
+
+      // 1.Promise.race()
+      // Promise.race() 的状态取决于第一个完成的 Promise 实例对象，如果第一个完成的成功了，那最终的就成功；如果第一个完成的失败了，那最终的就失败
+      // const racePromise = Promise.race([p1, p2]);
+      // racePromise.then(
+      //   data => {
+      //     console.log(data);
+      //   },
+      //   err => {
+      //     console.log(err);
+      //   }
+      // );
+
+      // 2.Promise.allSettled()
+      // Promise.allSettled() 的状态与传入的Promise 状态无关
+      // 永远都是成功的
+      // 它只会忠实的记录下各个 Promise 的表现
+      const allSettledPromise = Promise.allSettled([p1, p2]);
+      allSettledPromise.then(data => {
+        console.log('succ', data);
+      });
+    </script>
+  </body>
+</html>

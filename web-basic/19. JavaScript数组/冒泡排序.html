@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 冒泡排序
+        var arr = [6, 2, 9, 3, 8, 1, 45, 23, 45, 49];
+
+        // 一趟一趟比较，趟数序号就是i
+        for (var i = 1; i < arr.length; i++) {
+            // 内层循环负责两两比较
+            for (var j = arr.length - 1; j >= i; j--) {
+                // 判断项的大小
+                if (arr[j] < arr[j - 1]) {
+                    // 这一项比前一项还小了，那么就要交换两个变量的位置
+                    var temp = arr[j];
+                    arr[j] = arr[j - 1];
+                    arr[j - 1] = temp;
+                }
+            }
+            console.log(arr);
+
+        }
+
+        console.log(arr);
+
+    </script>
+</body>
+
+</html>

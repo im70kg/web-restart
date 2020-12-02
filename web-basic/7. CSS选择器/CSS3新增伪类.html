@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .para {
+            /* 宽度、高度 */
+            width: 100px;
+            height: 100px;
+            /* 边框 */
+            border: 1px solid #000;
+        }
+
+        .para:empty {
+            background-color: red;
+        }
+
+        input:focus {
+            background-color: rgb(239, 243, 181);
+        }
+
+        input:disabled {
+            border: 1px solid #000;
+        }
+
+        input:enabled {
+            border: 1px solid rgb(17, 84, 209);
+        }
+
+        input:checked+span {
+            color: red;
+        }
+
+        :root {
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <p class="para"></p>
+    <p class="para"></p>
+    <p class="para">123</p>
+    <p class="para"> </p>
+
+    <p>
+        <input type="text">
+        <input type="text">
+        <input type="text" disabled>
+        <input type="text" disabled>
+        <input type="text">
+    </p>
+
+    <p>
+        <input type="checkbox"> <span>文字</span>
+        <input type="checkbox"> <span>文字</span>
+        <input type="checkbox"> <span>文字</span>
+        <input type="checkbox"> <span>文字</span>
+    </p>
+</body>
+
+</html>

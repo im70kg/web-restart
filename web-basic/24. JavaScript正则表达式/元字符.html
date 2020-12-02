@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 题目1：某快递公司运单号形式是这样的：123-4567-890，请使用正则表达式检查某字符串是否符合此格式
+
+        // 正则表达式
+        var regexp1 = /^\d\d\d-\d\d\d\d-\d\d\d$/;
+        // 待测试的字符串
+        var str1 = '444-5555-000';
+        console.log(regexp1.test(str1));
+
+        // 题目2：某产品的验证秘钥形式是这样的：□□□-□□□□-□□□，其中□表示字母数字或者下划线，请使用正则表达式检查某字符串是否符合此格式
+
+        // 正则表达式
+        var regexp2 = /^\w\w\w-\w\w\w\w-\w\w\w$/;
+        // 待测试的字符串
+        var str2 = 'abc-__ab-123';
+        console.log(regexp2.test(str2));
+
+        // 题目3：某产品批号形式为：123.45^67#89，请使用正则表达式检查某字符串是否符合此格式
+        var regexp3 = /^\d\d\d\.\d\d\^\d\d\#\d\d$/;
+        // 待测试的字符串
+        var str3 = '666.66^66#66';
+        console.log(regexp3.test(str3));
+
+    </script>
+</body>
+</html>

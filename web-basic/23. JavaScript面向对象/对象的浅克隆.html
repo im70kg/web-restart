@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var obj1 = {
+            a: 1,
+            b: 2,
+            c: [44, 55, 66]
+        };
+
+        // 实现浅克隆
+        var obj2 = {};
+        for (var k in obj1) {
+            // 每遍历一个k属性，就给obj2也添加一个同名的k属性
+            // 值和obj1的k属性值相同
+            obj2[k] = obj1[k];
+        }
+
+        // 为什么叫浅克隆呢？比如c属性的值是引用类型值，那么本质上obj1和obj2的c属性是内存中的同一个数组，并没有被克隆分开。
+        obj1.c.push(77);
+        console.log(obj2);                  // obj2的c属性这个数组也会被增加77数组
+        console.log(obj1.c == obj2.c);      // true，true就证明了数组是同一个对象
+    </script>
+</body>
+
+</html>

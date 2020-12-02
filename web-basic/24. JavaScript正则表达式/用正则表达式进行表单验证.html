@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .warning {
+            color: red;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p>
+            请输入中文姓名：
+            <input type="text" id="nameField">
+            <span class="warning" id="nameWarning">输入的姓名不合法</span>
+        </p>
+        <p>
+            请输入手机号码：
+            <input type="text" id="telField">
+            <span class="warning" id="telWarning">输入的手机号码不合法</span>
+        </p>
+        <p>
+            请输入Email：
+            <input type="text" id="emailField">
+            <span class="warning" id="emailWarning">输入的Email不合法</span>
+        </p>
+    </div>
+    <script>
+        var nameField = document.getElementById('nameField');
+        var telField = document.getElementById('telField');
+        var emailField = document.getElementById('emailField');
+        var nameWarning = document.getElementById('nameWarning');
+        var telWarning = document.getElementById('telWarning');
+        var emailWarning = document.getElementById('emailWarning');
+
+        // 当文本框失去焦点，就是光标不在文本框中了
+        nameField.onblur = function () {
+            // 得到姓名
+            var name = nameField.value;
+            if (/^[\u4E00-\u9FA5]{2,4}$/.test(name)) {
+                // 如果通过校验
+                nameWarning.style.display = 'none';
+            } else {
+                // 如果没有通过校验
+                nameWarning.style.display = 'inline';
+            }
+        };
+
+        telField.onblur = function () {
+            // 得到电话
+            var tel = telField.value;
+            if (/^1\d{10}$/.test(tel)) {
+                // 如果通过校验
+                telWarning.style.display = 'none';
+            } else {
+                // 如果没有通过校验
+                telWarning.style.display = 'inline';
+            }
+        };
+
+        emailField.onblur = function () {
+            // 得到email
+            var email = emailField.value;
+            // 合法的email都是abc_def123@abc.net
+
+            if (/^\w{2,}\@\w{2,}\.[a-z]{2,4}(\.[a-z]{2,4})?$/.test(email)) {
+                // 如果通过校验
+                emailWarning.style.display = 'none';
+            } else {
+                // 如果没有通过校验
+                emailWarning.style.display = 'inline';
+            }
+        };
+    </script>
+</body>
+
+</html>

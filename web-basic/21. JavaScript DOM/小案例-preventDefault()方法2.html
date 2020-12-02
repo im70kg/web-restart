@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: #333;
+        }
+        body{
+            height: 2000px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box"></div>
+    <h1 id="info">0</h1>
+
+    <script>
+        var oBox = document.getElementById('box');
+        var oInfo = document.getElementById('info');
+
+        // 全局变量就是info中显示的数字
+        var a = 0;
+
+        // 给box盒子添加鼠标滚轮事件监听
+        oBox.onmousewheel = function (e) {
+            // 阻止默认事件：就是说当用户在盒子里面滚动鼠标滚轮的时候，此时不会引发页面的滚动条的滚动
+            e.preventDefault();
+            
+            if (e.deltaY > 0) {
+                a++;
+            } else {
+                a--;
+            }
+            oInfo.innerText = a;
+        }
+    </script>
+</body>
+
+</html>

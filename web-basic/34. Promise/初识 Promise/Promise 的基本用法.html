@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Promise 的基本用法</title>
+  </head>
+  <body>
+    <script>
+      // 1.实例化构造函数生成实例对象
+      // console.log(Promise);
+
+      // Promise 解决的不是回调函数，而是回调地狱
+      // const p = new Promise(() => {});
+
+      // 2.Promise 的状态
+      // const p = new Promise((resolve, reject) => {
+      //   // Promise 有 3 种状态，一开始是 pending（未完成），执行 resolve，变成 fulfilled(resolved)，已成功
+      //   // 执行 reject，变成 rejected，已失败
+
+      //   // Promise 的状态一旦变化，就不会再改变了
+
+      //   // pending->fulfilled
+      //   // resolve();
+
+      //   // pending->rejected
+      //   reject();
+      // });
+
+      // 3.then 方法
+      // p.then(
+      //   () => {
+      //     console.log('success');
+      //   },
+      //   () => {
+      //     console.log('error');
+      //   }
+      // );
+
+      // 4.resolve 和 reject 函数的参数
+      const p = new Promise((resolve, reject) => {
+        // Promise 有 3 种状态，一开始是 pending（未完成），执行 resolve，变成 fulfilled(resolved)，已成功
+        // 执行 reject，变成 rejected，已失败
+
+        // Promise 的状态一旦变化，就不会再改变了
+
+        // pending->fulfilled
+        // resolve('succ');
+        // resolve({ username: 'alex' });
+
+        // pending->rejected
+        // reject('reason');
+        reject(new Error('reason'));
+      });
+      p.then(
+        data => {
+          console.log('success', data);
+        },
+        err => {
+          console.log('error', err);
+        }
+      );
+
+      console.log(p);
+    </script>
+  </body>
+</html>

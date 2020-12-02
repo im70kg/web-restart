@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 创建一个函数
+        function fun() {
+            // 定义局部变量
+            var name = '慕课网';
+            // 返回一个局部函数
+            return function () {
+                alert(name);
+            };
+        }
+
+        // 调用外部函数，就能得到内部函数，用变量inn来接收
+        var inn = fun();
+        // 定义一个全局变量
+        var name = 'ABC';
+        // 执行inn函数，就相当于在fun函数的外部，执行了内部函数
+        inn();
+    </script>
+</body>
+
+</html>

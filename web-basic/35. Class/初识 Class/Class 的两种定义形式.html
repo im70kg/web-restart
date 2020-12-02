@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Class 的两种定义形式</title>
+  </head>
+  <body>
+    <script>
+      // 1.声明形式
+      // class Person {
+      //   constructor() {}
+
+      //   speak() {}
+      // }
+
+      // 2.表达式形式
+      // function Person(){}
+      // const Person = function () {};
+
+      // const Person = class {
+      //   constructor() {
+      //     console.log('constructor');
+      //   }
+
+      //   speak() {}
+      // };
+      // new Person();
+
+      // (function () {
+      //   console.log('func');
+      // })();
+      // func()
+
+      // 立即执行的匿名类
+      new (class {
+        constructor() {
+          console.log('constructor');
+        }
+      })();
+      // new Person();
+    </script>
+  </body>
+</html>

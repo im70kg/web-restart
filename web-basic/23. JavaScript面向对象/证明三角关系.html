@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function People(name, age, sex) {
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+        }
+        // 实例化
+        var xiaoming = new People('小明', 12, '男');
+        // 测试三角关系是否存在
+        console.log(xiaoming.__proto__ === People.prototype);
+    </script>
+</body>
+</html>

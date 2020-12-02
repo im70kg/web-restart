@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .carousel {
+            width: 650px;
+            height: 360px;
+            border: 1px solid #000;
+            margin: 50px auto;
+            position: relative;
+
+        }
+
+        .carousel ul {
+            list-style: none;
+        }
+
+        .carousel ul li {
+            position: absolute;
+            top: 0;
+            left: 0;
+            /* 透明度都是0 */
+            opacity: 0;
+            transition: opacity 1s ease 0s;
+        }
+
+        /* 只有第一张透明度是1 */
+        .carousel ul li:first-child {
+            opacity: 1;
+        }
+
+        .carousel .leftbtn {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            margin-top: -25px;
+            width: 50px;
+            height: 50px;
+            background-color: rgb(28, 180, 226);
+            border-radius: 50%;
+        }
+
+        .carousel .rightbtn {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            margin-top: -25px;
+            width: 50px;
+            height: 50px;
+            background-color: rgb(28, 180, 226);
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="carousel">
+        <ul id="list">
+            <li><img src="images/beijing/0.jpg" alt=""></li>
+            <li><img src="images/beijing/1.jpg" alt=""></li>
+            <li><img src="images/beijing/2.jpg" alt=""></li>
+            <li><img src="images/beijing/3.jpg" alt=""></li>
+            <li><img src="images/beijing/4.jpg" alt=""></li>
+        </ul>
+        <a href="javascript:;" class="leftbtn" id="leftbtn"></a>
+        <a href="javascript:;" class="rightbtn" id="rightbtn"></a>
+    </div>
+    <script>
+        // 得到按钮和ul，ul整体进行运动
+        var leftbtn = document.getElementById('leftbtn');
+        var rightbtn = document.getElementById('rightbtn');
+        var list = document.getElementById('list');
+        var lis = list.getElementsByTagName('li');
+
+        // 当前是第几张图显示
+        var idx = 0;
+
+        // 节流
+        var lock = true;
+
+        // 右按钮
+        rightbtn.onclick = function () {
+            // 判断节流
+            if (!lock) return;
+
+            lock = false;
+
+            // 还没有改idx，此时的idx这个图片就是老图，老图淡出
+            lis[idx].style.opacity = 0;
+            idx++;
+            if (idx > 4) idx = 0;
+            // 改了idx，此时的idx这个图片就是新图，新图淡入
+            lis[idx].style.opacity = 1;
+
+            // 动画结束之后，开锁
+            setTimeout(function () {
+                lock = true;
+            }, 1000);
+        }
+
+        // 左按钮
+        leftbtn.onclick = function () {
+            // 判断节流
+            if (!lock) return;
+
+            lock = false;
+
+            // 还没有改idx，此时的idx这个图片就是老图，老图淡出
+            lis[idx].style.opacity = 0;
+            idx--;
+            if (idx < 0) idx = 4;
+            // 改了idx，此时的idx这个图片就是新图，新图淡入
+            lis[idx].style.opacity = 1;
+
+            // 动画结束之后，开锁
+            setTimeout(function () {
+                lock = true;
+            }, 1000);
+        }
+    </script>
+</body>
+
+</html>

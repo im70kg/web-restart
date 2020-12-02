@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 封装一个函数，这个函数的功能就是私有化变量
+        function fun() {
+            // 定义一个局部变量a
+            var a = 0;
+
+            return {
+                getA: function () {
+                    return a;
+                },
+                add: function () {
+                    a++;
+                },
+                pow: function () {
+                    a *= 2;
+                }
+            };
+        }
+
+        var obj = fun();
+        // 如果想在fun函数外面使用变量a，唯一的方法就是调用getA()方法
+        console.log(obj.getA());
+        // 想让变量a进行加1操作
+        obj.add();
+        obj.add();
+        obj.add();
+        console.log(obj.getA());
+        obj.pow();
+        console.log(obj.getA());
+    </script>
+</body>
+
+</html>
